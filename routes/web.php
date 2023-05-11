@@ -57,7 +57,7 @@ Route::middleware(['auth', 'user-access:teacher'])->group(function () {
     Route::post('/teacher/assignments', [AssignmentController::class, 'store'])->name('teacher.assignments.store');
     Route::get('/assignments/{id}', [AssignmentController::class, 'show'])->name('teacher.assignments.show');
     Route::get('/assignments/{id}/edit', [AssignmentController::class, 'edit'])->name('teacher.assignments.edit');
-    Route::put('/assignments/{id}', [AssignmentController::class, 'update']);
+    Route::put('/assignments/{id}', [AssignmentController::class, 'update'])->name('teacher.assignments.update');
     Route::delete('/assignments/{id}', [AssignmentController::class, 'destroy'])->name('teacher.assignments.destroy');
 
     //     Route::get('teacher/assignments/create', [AssignmentController::class, 'create'])->name('assignments.create');

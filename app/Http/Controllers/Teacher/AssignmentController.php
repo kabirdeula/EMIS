@@ -20,19 +20,13 @@ class AssignmentController extends Controller
         // Retrieve the currently logged-in user
         $user = Auth::user();
 
-        if ($user->type === 2) {
-            $teacher = $user->teacher;
+        // if ($user->type === 2) {
+        //     $teacher = $user->teacher;
 
-            $assignments = Assignments::select('assignments.title', 'assignments.description', 'programs.code as program_code', 'semesters.code as semester_code', 'courses.name as course_name', 'teachers.first_name', 'teachers.last_name')
-                ->join('programs', 'assignments.program_id', '=', 'programs.id')
-                ->join('semesters', 'assignments.semester_id', '=', 'semesters.id')
-                ->join('courses', 'assignments.course_id', '=', 'courses.id')
-                ->join('teachers', 'assignments.teacher_id', '=', 'teachers.id')
-                ->where('teachers.user_id', $teacher->user_id)
-                ->get();
 
+        // }
+        $assignments = Assignments::all();
             return view('teacher.components.assignments.index', compact('assignments'));
-        }
 
         // if ($user->type === 2) {
         //     $teacher = $user->teacher;
@@ -84,12 +78,12 @@ class AssignmentController extends Controller
     public function show($id)
     {
 
-        $assignment = Assignments::findOrFail($id);
+        $assignments = Assignments::findOrFail($id);
         $courses = Courses::findOrFail($id);
         $programs = Programs::findOrFail($id);
         $semesters = Semester::findOrFail($id);
         $teachers = Teachers::findOrFail($id);
-        return view('teacher.components.assignments.read', compact('assignment', 'courses', 'programs', 'semesters', 'teachers'));
+        return view('teacher.components.assignments.read', compact('assignments', 'courses', 'programs', 'semesters', 'teachers'));
     }
 
     public function edit($id)
