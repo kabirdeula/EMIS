@@ -13,7 +13,9 @@
         <div class="container">
             <nav id="navbar-demo" class="navbar navbar-expand-md navbar-light bg-white">
                 <div class="container">
-                    <a href="{{ url('/') }}" class="navbar-brand fw-bold fs-2">{{ __('UniLink') }}</a>
+                    <img src="{{ asset('images/logo-no-background.svg') }}"  width="32" height="32" class="d-inline-block" alt="Logo">
+                    <a href="{{ url('/') }}" class="navbar-brand fw-bold fs-3 m-2">
+                        {{ __('UniLink') }}</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="{{ __('Toggle Navigation') }}">
