@@ -19,4 +19,10 @@ class AdminController extends Controller
         $users = User::all();
         return view('admin.home', ['users'=>$users]);
     }
+
+    public function usersshow()
+    {
+        $users = User::all();
+        return view('admin.components.users.show', compact('users'));
+    }
 }

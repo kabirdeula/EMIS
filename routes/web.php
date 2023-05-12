@@ -43,6 +43,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+Route::get('/admin/users', [AdminController::class, 'usersshow']);
 });
 
 /*------------------------------------------
