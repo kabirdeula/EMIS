@@ -50,7 +50,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 All Teacher Routes List
 --------------------------------------------
 --------------------------------------------*/
-Route::middleware(['auth', 'user-access:teacher'])->group(function () {
+    Route::middleware(['auth', 'user-access:teacher'])->group(function () {
     Route::get('/teacher/home', [TeacherController::class, 'index'])->name('teacher.home');
     Route::get('/teacher/assignments', [AssignmentController::class, 'index'])->name('teacher.assignments');
     Route::get('/teacher/assignments/create', [AssignmentController::class, 'create'])->name('teacher.assignments.create');
