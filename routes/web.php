@@ -34,6 +34,7 @@ Route::middleware(['auth', 'user-access:student'])->group(function () {
     Route::get('student/home', [StudentController::class, 'index'])->name('home');
     Route::get('student/assignment/submit', [AssignmentController::class, 'create'])->name('assignment.create');
     Route::post('student/assignment/submit', [AssignmentController::class, 'store'])->name('assignment.store');
+    Route::post('student/assignment/', [AssignmentController::class, 'index'])->name('student.assignment');
 });
 
 /*------------------------------------------

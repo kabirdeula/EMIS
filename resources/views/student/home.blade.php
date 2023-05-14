@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('student.layouts.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -17,5 +17,5 @@
     </div>
 </div>
 
-@include('student.assignments.create')
+{{-- @include('student.assignments.create') --}}
 @endsection
