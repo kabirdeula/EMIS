@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UsersRecordsController;
 use App\Http\Controllers\Student\StudentController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\ParentController;
 use App\Http\Controllers\Teacher\AssignmentController;
+use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\ParentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
-Route::get('/admin/users', [AdminController::class, 'usersshow']);
+    Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users.show');
 });
 
 /*------------------------------------------

@@ -86,7 +86,7 @@
                 Users Records
               </div>
               <div class="card-body">
-                @include('admin.components.usersrecords')
+                {{-- @include('admin.components.usersrecords') --}}
               </div>
             </div>
           </div>
