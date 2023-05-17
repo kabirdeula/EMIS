@@ -3,24 +3,24 @@
 
     {{-- Sidebar Toggle(Topbar) --}}
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <span>Bars</span>
+        <span><i class="la la-bars"></i></span>
     </button>
 
-    {{-- Topbar Search --}}
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-3 my-md-0 mw-100 navbar-search">
+    {{-- Topbar Navbar --}}
+    <ul class="navbar-nav ms-auto">
+
+            {{-- Topbar Search --}}
+    <form class="d-none d-sm-inline-block form-inline ml-md-3 my-3 my-md-0 mw-100 navbar-search">
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search...">
             <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
-                    S
+                    <i class="las la-search"></i>
                 </button>
             </div>
         </div>
     </form>
     {{-- End Topbar Search --}}
-
-    {{-- Topbar Navbar --}}
-    <ul class="navbar-nav ms-auto">
 
         {{-- Nav Item - Search  Dropdown (Visible Only x5) --}}
         {{-- <li class="nav-item dropdown d-sm-none">

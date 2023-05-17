@@ -46,6 +46,9 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users.show');
+    Route::get('/admin/users/create', [UsersRecordsController::class, 'create'])->name('users.create');
+    Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
+    Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
 });
 
 /*------------------------------------------
