@@ -1,7 +1,14 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    <div class="container">
+@section("title", "Users")
+
+@section('section')
+
+{{-- Page Heading --}}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-2 text-gray-800">Users</h1>
+</div>
+    {{-- <div class="container">
         <h1>Users</h1>
         <table id="users-table" class="table table-bordered">
             <thead>
@@ -26,13 +33,5 @@
         <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-            $('#users-table').DataTable();
-        });
-    </script>
+    </div> --}}
 @endsection

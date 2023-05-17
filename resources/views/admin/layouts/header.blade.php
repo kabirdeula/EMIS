@@ -12,7 +12,3 @@
 
             {{-- Topbar --}}
             @include('admin.components.topbar')
-        </div>
-    </div>
-
-</div>
