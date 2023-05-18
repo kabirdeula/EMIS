@@ -14,7 +14,7 @@ class UsersRecordsController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.components.users.show', compact('users'));
+        return view('admin.components.users.index', compact('users'));
     }
 
     /**
@@ -30,7 +30,21 @@ class UsersRecordsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'type' => 'required',
+        ]);
+
+        $users = new User;
+        $users -> name = $request -> input('name');
+        $users -> email = $request -> input('email');
+        $users -> password = $request -> input('password');
+        $users -> type = $request -> input('type');
+        $users -> save();
+
+        return redirect('/admin/users') -> with('success', 'Users created successfully.');
     }
 
     /**
@@ -38,7 +52,8 @@ class UsersRecordsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('admin.components.users.show', compact('users'));
     }
 
     /**
@@ -46,7 +61,8 @@ class UsersRecordsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('admin.components.users.edit', compact('users'));
     }
 
     /**
@@ -54,7 +70,15 @@ class UsersRecordsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users -> name = $request -> input('name');
+        $users -> email = $request -> input('email');
+        $users -> password = $request -> input('password');
+        // $users -> type = $request -> input('type');
+        $users -> save();
+
+        return redirect('/admin/users') -> with('success', 'Users updated successfully.');
+
     }
 
     /**
@@ -62,6 +86,8 @@ class UsersRecordsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users -> delete;
+        return redirect('/admin/users') -> with('success', 'Users deleted successfully.');
     }
 }

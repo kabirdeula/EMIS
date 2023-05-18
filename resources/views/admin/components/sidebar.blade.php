@@ -43,7 +43,7 @@
 
     {{-- Nav Item - Students --}}
     <li class="nav-item">
-        <a href="{{ route('users.show') }}" class="nav-link">
+        <a href="{{ route('users') }}" class="nav-link">
             <span>Users</span>
         </a>
     </li>
