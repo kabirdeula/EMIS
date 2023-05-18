@@ -41,10 +41,24 @@
         </div>
     </li> --}}
 
-    {{-- Nav Item - Students --}}
+    {{-- Nav Item - Users --}}
     <li class="nav-item">
         <a href="{{ route('users') }}" class="nav-link">
             <span>Users</span>
+        </a>
+    </li>
+
+    {{-- Nav Item - Users --}}
+    {{-- <li class="nav-item">
+        <a href="{{ route('students') }}" class="nav-link">
+            <span>Students</span>
+        </a>
+    </li> --}}
+
+    {{-- Nav Item - Programs --}}
+    <li class="nav-item">
+        <a href="{{ route('programs') }}" class="nav-link">
+            <span>Programs</span>
         </a>
     </li>
 

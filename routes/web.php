@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Teacher\AssignmentController;
@@ -45,6 +46,10 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+
+    /**
+     *! Users Group
+     */
     Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users');
     Route::get('/admin/users/create', [UsersRecordsController::class, 'create'])->name('users.create');
     Route::post('/admin/users/', [UsersRecordsController::class, 'store'])->name('users.store');
@@ -52,6 +57,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
     Route::put('/admin/users/{id}', [UsersRecordsController::class, 'update'])->name('users.update');
     Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
+
+    /**
+     * ! Programs Group
+     */
+    Route::get('/admin/programs', [ProgramsRecordsController::class, 'index'])->name('programs');
+    Route::get('/admin/programs/create', [ProgramsRecordsController::class, 'create'])->name('programs.create');
+    Route::post('/admin/programs', [ProgramsRecordsController::class, 'store'])->name('programs.store');
+    Route::get('/admin/programs/{id}', [ProgramsRecordsController::class, 'show'])->name('programs.show');
+    Route::get('/admin/programs/{id}/edit', [ProgramsRecordsController::class, 'edit'])->name('programs.edit');
+    Route::put('/admin/programs/{id}', [UsersRecordsController::class, 'update'])->name('programs.update');
+    Route::delete('/admin/programs/{id}', [UsersRecordsController::class, 'destroy'])->name('programs.destroy');
 });
 
 /*------------------------------------------

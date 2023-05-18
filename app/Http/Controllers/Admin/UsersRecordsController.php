@@ -87,7 +87,7 @@ class UsersRecordsController extends Controller
     public function destroy(string $id)
     {
         $users = User::findOrFail($id);
-        $users -> delete;
+        $users -> delete();
         return redirect('/admin/users') -> with('success', 'Users deleted successfully.');
     }
 }
