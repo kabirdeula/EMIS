@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 use App\Http\Controllers\Student\StudentController;
@@ -66,8 +67,19 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/admin/programs', [ProgramsRecordsController::class, 'store'])->name('programs.store');
     Route::get('/admin/programs/{id}', [ProgramsRecordsController::class, 'show'])->name('programs.show');
     Route::get('/admin/programs/{id}/edit', [ProgramsRecordsController::class, 'edit'])->name('programs.edit');
-    Route::put('/admin/programs/{id}', [UsersRecordsController::class, 'update'])->name('programs.update');
-    Route::delete('/admin/programs/{id}', [UsersRecordsController::class, 'destroy'])->name('programs.destroy');
+    Route::put('/admin/programs/{id}', [ProgramsRecordsController::class, 'update'])->name('programs.update');
+    Route::delete('/admin/programs/{id}', [ProgramsRecordsController::class, 'destroy'])->name('programs.destroy');
+
+    /**
+     * ! Courses Group
+     */
+    Route::get('/admin/courses', [CoursesRecordsController::class, 'index'])->name('courses');
+    Route::get('/admin/courses/create', [CoursesRecordsController::class, 'create'])->name('courses.create');
+    Route::post('/admin/courses', [CoursesRecordsController::class, 'store'])->name('courses.store');
+    Route::get('/admin/courses/{id}', [CoursesRecordsController::class, 'show'])->name('courses.show');
+    Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
+    Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
+    Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
 });
 
 /*------------------------------------------
