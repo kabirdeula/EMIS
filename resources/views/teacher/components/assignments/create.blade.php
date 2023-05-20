@@ -1,5 +1,7 @@
 @extends('teacher.layouts.app')
 
+@section('title', 'Insert New Assignment | UniLink')
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -33,42 +35,42 @@
                                 <input type="date" class="form-control" id="due_date" name="due_date">
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="program_id">Program</label>
                                 <select class="form-control" id="program_id" name="program_id">
                                     @foreach ($programs as $program)
                                         <option value="{{ $program->id }}">{{ $program->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="semester_id">Semester</label>
                                 <select class="form-control" id="semester_id" name="semester_id">
                                     @foreach ($semesters as $semester)
                                         <option value="{{ $semester->id }}">{{ $semester->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="course_id">Course</label>
                                 <select class="form-control" id="course_id" name="course_id">
                                     @foreach ($courses as $course)
                                         <option value="{{ $course->id }}">{{ $course->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
-                            <div class="form-group">
-                                <label for="teacher_id">Teacher</label>
+                            {{-- <div class="form-group">
+                                <label for="teacher_id">Assignment</label>
                                 <select class="form-control" id="teacher_id" name="teacher_id">
                                     @foreach ($teachers as $teacher)
                                         <option value="{{ $teacher->id }}">
                                             {{ $teacher->first_name . ' ' . $teacher->last_name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
                             <button type="submit" class="btn btn-primary mt-3">Create Assignment</button>
                         </form>
