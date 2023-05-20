@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\TeachersRecordsController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 
 use App\Http\Controllers\Student\StudentController;
+use App\Http\Controllers\Student\StudentAssignmentController;
 
 use App\Http\Controllers\Teacher\AssignmentController;
 use App\Http\Controllers\Teacher\TeacherController;
@@ -41,9 +42,17 @@ All Students Users Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:student'])->group(function () {
     Route::get('student/home', [StudentController::class, 'index'])->name('home');
-    Route::get('student/assignment/submit', [AssignmentController::class, 'create'])->name('assignment.create');
-    Route::post('student/assignment/submit', [AssignmentController::class, 'store'])->name('assignment.store');
-    Route::post('student/assignment/', [AssignmentController::class, 'index'])->name('student.assignment');
+
+    /**
+     * ! Assignments
+     */
+    Route::get('/student/assignments', [StudentAssignmentController::class, 'index'])->name('student.assignments');
+    Route::get('/student/assignments/create', [StudentAssignmentController::class, 'create'])->name('student.assignments.create');
+    Route::post('/student/assignments', [StudentAssignmentController::class, 'store'])->name('student.assignments.store');
+    Route::get('/student/assignments/{id}', [StudentAssignmentController::class, 'show'])->name('student.assignments.show');
+    Route::get('/student/assignments/{id}/edit', [StudentAssignmentController::class, 'edit'])->name('student.assignments.edit');
+    Route::put('/student/assignments/{id}', [StudentAssignmentController::class, 'update'])->name('student.assignments.update');
+    Route::delete('/student/assignments/{id}', [StudentAssignmentController::class, 'destroy'])->name('student.assignments.destroy');
 });
 
 /*------------------------------------------
