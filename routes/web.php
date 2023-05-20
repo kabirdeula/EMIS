@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
+use App\Http\Controllers\Admin\TeachersRecordsController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Teacher\AssignmentController;
@@ -92,6 +93,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/students/{id}/edit', [StudentsRecordsController::class, 'edit'])->name('students.edit');
     Route::put('/admin/students/{id}', [StudentsRecordsController::class, 'update'])->name('students.update');
     Route::delete('/admin/students/{id}', [StudentsRecordsController::class, 'destroy'])->name('students.destroy');
+
+    /**
+     * ! Teachers Group
+     */
+    Route::get('/admin/teachers', [TeachersRecordsController::class, 'index'])->name('teachers');
+    Route::get('/admin/teachers/create', [TeachersRecordsController::class, 'create'])->name('teachers.create');
+    Route::post('/admin/teachers', [TeachersRecordsController::class, 'store'])->name('teachers.store');
+    Route::get('/admin/teachers/{id}', [TeachersRecordsController::class, 'show'])->name('teachers.show');
+    Route::get('/admin/teachers/{id}/edit', [TeachersRecordsController::class, 'edit'])->name('teachers.edit');
+    Route::put('/admin/teachers/{id}', [TeachersRecordsController::class, 'update'])->name('teachers.update');
+    Route::delete('/admin/teachers/{id}', [TeachersRecordsController::class, 'destroy'])->name('teachers.destroy');
 });
 
 /*------------------------------------------
@@ -99,7 +111,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 All Teacher Routes List
 --------------------------------------------
 --------------------------------------------*/
-    Route::middleware(['auth', 'user-access:teacher'])->group(function () {
+Route::middleware(['auth', 'user-access:teacher'])->group(function () {
     Route::get('/teacher/home', [TeacherController::class, 'index'])->name('teacher.home');
     Route::get('/teacher/assignments', [AssignmentController::class, 'index'])->name('teacher.assignments');
     Route::get('/teacher/assignments/create', [AssignmentController::class, 'create'])->name('teacher.assignments.create');

@@ -69,6 +69,13 @@
         </a>
     </li>
 
+    {{-- Nav Item - Courses --}}
+    <li class="nav-item">
+        <a href="{{ route('teachers') }}" class="nav-link">
+            <span>Teachers</span>
+        </a>
+    </li>
+
     {{-- Divider --}}
     <hr class="sidebar-divider d-none d-md-block">
 
