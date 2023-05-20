@@ -48,6 +48,14 @@ class CoursesTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Database Management',
+                'code' => 'COM 312',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 6
+            ],
+
+            [
                 'name' => 'Introductory Microeconomics',
                 'code' => 'ECO 211',
                 'credit_hour' => '3',
@@ -112,11 +120,27 @@ class CoursesTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'E-Commerce',
+                'code' => 'ITC 311',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 7
+            ],
+
+            [
                 'name' => 'Principles of Management',
                 'code' => 'MGT 201',
                 'credit_hour' => '3',
                 'program_id' => 1,
                 'semester_id' => 1
+            ],
+
+            [
+                'name' => 'Organizational Behavior',
+                'code' => 'MGT 203',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 5
             ],
 
             [
@@ -136,6 +160,54 @@ class CoursesTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Legal Environment of Business',
+                'code' => 'MGT 314',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 5
+            ],
+
+            [
+                'name' => 'Business Environment in Nepal',
+                'code' => 'MGT 315',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 6
+            ],
+
+            [
+                'name' => 'Introduction to International Business',
+                'code' => 'MGT 316',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 6
+            ],
+
+            [
+                'name' => 'Business Ethics and Social Responsibility',
+                'code' => 'MGT 317',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 7
+            ],
+
+            [
+                'name' => 'Business Strategy',
+                'code' => 'MGT 318',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 8
+            ],
+
+            [
+                'name' => 'Fundamentals of Marketing',
+                'code' => 'MKT 311',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 5
+            ],
+
+            [
                 'name' => 'Business Mathematics I',
                 'code' => 'MTH 211',
                 'credit_hour' => '3',
@@ -149,6 +221,14 @@ class CoursesTableSeeder extends Seeder
                 'credit_hour' => '3',
                 'program_id' => 1,
                 'semester_id' => 2
+            ],
+
+            [
+                'name' => 'Introduction to Operations Management',
+                'code' => 'OPR 311',
+                'credit_hour' => '3',
+                'program_id' => 1,
+                'semester_id' => 5
             ],
 
             [
@@ -183,23 +263,9 @@ class CoursesTableSeeder extends Seeder
                 'semester_id' => 3
             ],
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ];
 
-        foreach($courses as $key => $course){
+        foreach ($courses as $key => $course) {
             Courses::create($course);
         }
     }
