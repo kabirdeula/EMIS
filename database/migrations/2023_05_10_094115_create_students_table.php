@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('program_id');
-            $table->unsignedBigInteger('semester_id');
-            $table->unsignedBigInteger('course_id');
-            $table->date('date_of_birth');
+            $table->unsignedBigInteger('program_id')->nullable();
+            $table->unsignedBigInteger('semester_id')->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->string('phone_number')->nullable();
             $table->timestamps();
 

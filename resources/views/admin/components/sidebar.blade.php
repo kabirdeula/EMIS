@@ -49,11 +49,11 @@
     </li>
 
     {{-- Nav Item - Users --}}
-    {{-- <li class="nav-item">
+    <li class="nav-item">
         <a href="{{ route('students') }}" class="nav-link">
             <span>Students</span>
         </a>
-    </li> --}}
+    </li>
 
     {{-- Nav Item - Programs --}}
     <li class="nav-item">

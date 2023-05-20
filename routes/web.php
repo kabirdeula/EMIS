@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
+use App\Http\Controllers\Admin\StudentsRecordsController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Teacher\AssignmentController;
@@ -80,6 +81,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
     Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
     Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
+
+    /**
+     * ! Students Group
+     */
+    Route::get('/admin/students', [StudentsRecordsController::class, 'index'])->name('students');
+    Route::get('/admin/students/create', [StudentsRecordsController::class, 'create'])->name('students.create');
+    Route::post('/admin/students', [StudentsRecordsController::class, 'store'])->name('students.store');
+    Route::get('/admin/students/{id}', [StudentsRecordsController::class, 'show'])->name('students.show');
+    Route::get('/admin/students/{id}/edit', [StudentsRecordsController::class, 'edit'])->name('students.edit');
+    Route::put('/admin/students/{id}', [StudentsRecordsController::class, 'update'])->name('students.update');
+    Route::delete('/admin/students/{id}', [StudentsRecordsController::class, 'destroy'])->name('students.destroy');
 });
 
 /*------------------------------------------
