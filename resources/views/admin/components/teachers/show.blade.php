@@ -2,7 +2,7 @@
 
 @section('title', $students->user->name)
 
-@section('section')
+@section('content')
 
     <div class="container">
         <h1>Program Details: {{ $students->user->name }}</h1>

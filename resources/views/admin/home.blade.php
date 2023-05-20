@@ -2,6 +2,6 @@
 
 @section('title', 'Dashboard | UniLink')
 
-@section('section')
+@section('content')
     @include('admin.components.cards')
 @endsection

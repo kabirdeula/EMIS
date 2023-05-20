@@ -2,7 +2,7 @@
 
 @section('title', 'Update ' . $students->user->name . ' | UniLink')
 
-@section('section')
+@section('content')
 
     {{-- Page Heading --}}
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

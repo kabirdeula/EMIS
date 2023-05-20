@@ -28,7 +28,7 @@
     @include('admin.layouts.header')
 
     <div class="container">
-        @yield('section')
+        @yield('content')
     </div>
 
     </div>

@@ -2,7 +2,7 @@
 
 @section('title', $programs->name)
 
-@section('section')
+@section('content')
 
     <div class="container">
         <h1>Program Details: {{ $programs->name }}</h1>
