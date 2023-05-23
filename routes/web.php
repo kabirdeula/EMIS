@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
+use App\Http\Controllers\Admin\PDFController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
 use App\Http\Controllers\Admin\TeachersRecordsController;
@@ -66,6 +67,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/profile/', [AdminProfileController::class, 'show'])->name('admin.profile');
 
     /**
+     *! PDF Group
+     */
+    Route::get('/admin/user/pdf', [PDFController::class, 'UsersPDF'])->name('users.pdf');
+
+
+    /**
      *! Users Group
      */
     Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users');
@@ -75,7 +82,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
     Route::put('/admin/users/{id}', [UsersRecordsController::class, 'update'])->name('users.update');
     Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
-    Route::get('/admin/user/pdf', [UsersRecordsController::class, 'generatePDF'])->name('users.pdf');
 
     /**
      * ! Programs Group
