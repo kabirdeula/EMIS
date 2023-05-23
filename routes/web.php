@@ -71,6 +71,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
      */
     Route::get('/admin/user/pdf', [PDFController::class, 'UsersPDF'])->name('users.pdf');
     Route::get('/admin/student/pdf', [PDFController::class, 'StudentPDF'])->name('students.pdf');
+    Route::get('/admin/teacher/pdf', [PDFController::class, 'TeacherPDF'])->name('teachers.pdf');
 
 
     /**
@@ -127,7 +128,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/teachers/{id}/edit', [TeachersRecordsController::class, 'edit'])->name('teachers.edit');
     Route::put('/admin/teachers/{id}', [TeachersRecordsController::class, 'update'])->name('teachers.update');
     Route::delete('/admin/teachers/{id}', [TeachersRecordsController::class, 'destroy'])->name('teachers.destroy');
-    Route::get('/admin/teacher/pdf', [TeachersRecordsController::class, 'generatePDF'])->name('teachers.pdf');
 });
 
 /*------------------------------------------
