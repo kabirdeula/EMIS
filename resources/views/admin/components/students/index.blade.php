@@ -14,8 +14,11 @@
 
     {{-- DataTables Start --}}
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Students Data</h6>
+            <a href="{{ route('students.pdf') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow fs-5">
+                <i class="las la-print me-2"></i>Print
+            </a>
         </div>
 
         <div class="card-body">
