@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
@@ -62,6 +63,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+    Route::get('/admin/profile/', [AdminProfileController::class, 'show'])->name('admin.profile');
 
     /**
      *! Users Group
@@ -73,6 +75,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
     Route::put('/admin/users/{id}', [UsersRecordsController::class, 'update'])->name('users.update');
     Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
+    Route::get('/admin/user/pdf', [UsersRecordsController::class, 'generatePDF'])->name('users.pdf');
 
     /**
      * ! Programs Group
@@ -106,6 +109,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/students/{id}/edit', [StudentsRecordsController::class, 'edit'])->name('students.edit');
     Route::put('/admin/students/{id}', [StudentsRecordsController::class, 'update'])->name('students.update');
     Route::delete('/admin/students/{id}', [StudentsRecordsController::class, 'destroy'])->name('students.destroy');
+    Route::get('/admin/student/pdf', [StudentsRecordsController::class, 'generatePDF'])->name('students.pdf');
 
     /**
      * ! Teachers Group
@@ -117,6 +121,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/teachers/{id}/edit', [TeachersRecordsController::class, 'edit'])->name('teachers.edit');
     Route::put('/admin/teachers/{id}', [TeachersRecordsController::class, 'update'])->name('teachers.update');
     Route::delete('/admin/teachers/{id}', [TeachersRecordsController::class, 'destroy'])->name('teachers.destroy');
+    Route::get('/admin/teacher/pdf', [TeachersRecordsController::class, 'generatePDF'])->name('teachers.pdf');
 });
 
 /*------------------------------------------
