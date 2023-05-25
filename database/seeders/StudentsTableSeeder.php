@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Students;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class StudentsTableSeeder extends Seeder
 {
@@ -15,12 +16,40 @@ class StudentsTableSeeder extends Seeder
     public function run(): void
     {
         $users = User::where('type', 0)
-            -> get();
+            ->get();
+        $programs = DB::table('programs')->pluck('id')->toArray();
+        $semesters = DB::table('semesters')->pluck('id')->toArray();
 
         foreach ($users as $user) {
+            $programId = Arr::random($programs);
+            $semesterId = Arr::random($semesters);
+            $phoneNumber = $this->generateRandomMobileNumber();
+            $dateOfBirth = $this->generateRandomDateOfBirth();
+
             Students::create([
                 'user_id' => $user->id,
+                'program_id' => $programId,
+                'semester_id' => $semesterId,
+                'phone_number' => $phoneNumber,
+                'date_of_birth' => $dateOfBirth,
             ]);
         }
+    }
+
+    private function generateRandomMobileNumber()
+    {
+        $mobileNumber = '98';
+        for ($i = 0; $i < 8; $i++) {
+            $mobileNumber .= mt_rand(0, 9);
+        }
+        return $mobileNumber;
+    }
+
+    private function generateRandomDateOfBirth()
+    {
+        $startDate = strtotime('1995-01-01');
+        $endDate = strtotime('2005-12-31');
+        $randomTimestamp = mt_rand($startDate, $endDate);
+        return date('Y-m-d', $randomTimestamp);
     }
 }

@@ -19,7 +19,12 @@ class StudentsRecordsController extends Controller
     public function index()
     {
         $students = Students::all();
-        return view('admin.components.students.index', compact('students'));
+        $bbm_count = Students::where('program_id', 1)->count();
+        $bca_count = Students::where('program_id', 2)->count();
+        $bhm_count = Students::where('program_id', 3)->count();
+        $bim_count = Students::where('program_id', 4)->count();
+        $csit_count = Students::where('program_id', 5)->count();
+        return view('admin.components.students.index', compact('students', 'bbm_count', 'bca_count', 'bhm_count', 'bim_count', 'csit_count'));
     }
 
     /**
