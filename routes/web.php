@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\AttendanceRecordsController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\PDFController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
@@ -72,6 +73,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/user/pdf', [PDFController::class, 'UsersPDF'])->name('users.pdf');
     Route::get('/admin/student/pdf', [PDFController::class, 'StudentPDF'])->name('students.pdf');
     Route::get('/admin/teacher/pdf', [PDFController::class, 'TeacherPDF'])->name('teachers.pdf');
+    Route::get('/admin/attendance/pdf', [PDFController::class, 'AttendancePDF'])->name('attendances.pdf');
 
 
     /**
@@ -128,6 +130,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/teachers/{id}/edit', [TeachersRecordsController::class, 'edit'])->name('teachers.edit');
     Route::put('/admin/teachers/{id}', [TeachersRecordsController::class, 'update'])->name('teachers.update');
     Route::delete('/admin/teachers/{id}', [TeachersRecordsController::class, 'destroy'])->name('teachers.destroy');
+
+    /**
+     * ! Attendance Group
+     */
+    Route::get('/admin/attendances', [AttendanceRecordsController::class, 'index'])->name('attendances');
+    Route::get('/admin/attendances/create', [AttendanceRecordsController::class, 'create'])->name('attendances.create');
+    Route::post('/admin/attendances', [AttendanceRecordsController::class, 'store'])->name('attendances.store');
+    Route::get('/admin/attendances/{id}', [AttendanceRecordsController::class, 'show'])->name('attendances.show');
+    Route::get('/admin/attendances/{id}/edit', [AttendanceRecordsController::class, 'edit'])->name('attendances.edit');
+    Route::put('/admin/attendances/{id}', [AttendanceRecordsController::class, 'update'])->name('attendances.update');
+    Route::delete('/admin/attendances/{id}', [AttendanceRecordsController::class, 'destroy'])->name('attendances.destroy');
 });
 
 /*------------------------------------------

@@ -3,27 +3,30 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+
+use App\Models\Attendance;
 use App\Models\Students;
 use App\Models\Teachers;
 use App\Models\User;
+
 use Dompdf\Dompdf;
 use Illuminate\Support\Facades\View;
 
 class PDFController extends Controller
 {
-    public function UsersPDF()
+    public function AttendancePDF()
     {
         // Fetching table data from the database.
-        $users = User::all();
+        $attendances = Attendance::all();
 
         $pdf = new Dompdf();
-        $pdf -> loadHtml(View::make('admin.components.pdf.users')->with('users', $users)->render());
+        $pdf -> loadHtml(View::make('admin.components.pdf.attendances')->with('attendances', $attendances)->render());
 
         $pdf -> setPaper('A4', 'portrait');
 
         $pdf -> render();
 
-        $pdf -> stream('users.pdf');
+        $pdf -> stream('attendances.pdf');
     }
 
     public function StudentPDF()
@@ -54,5 +57,20 @@ class PDFController extends Controller
         $pdf -> render();
 
         $pdf -> stream('teachers.pdf');
+    }
+
+    public function UsersPDF()
+    {
+        // Fetching table data from the database.
+        $users = User::all();
+
+        $pdf = new Dompdf();
+        $pdf -> loadHtml(View::make('admin.components.pdf.users')->with('users', $users)->render());
+
+        $pdf -> setPaper('A4', 'portrait');
+
+        $pdf -> render();
+
+        $pdf -> stream('users.pdf');
     }
 }
