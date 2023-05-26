@@ -23,6 +23,11 @@
             <div class="row justify-content-center">
                 <div
                     class="col-lg-5 col-md-12 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
                     <h1>{{ __('Login') }}</h1>
 
@@ -75,10 +80,10 @@
                             <div class="col-md-12 offset-md-4">
                                 <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
                                 @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                             </div>
 
 

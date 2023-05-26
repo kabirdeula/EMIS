@@ -59,7 +59,7 @@ class LoginController extends Controller
                 return redirect() -> route('home');
             }
         }else{
-            return redirect() -> route('login') -> with('error', 'Email Address and Passwords are Wrong.');
+            return redirect() -> route('login') -> with('error', 'Email Address or Passwords is Wrong.');
         }
     }
 }
