@@ -19,6 +19,11 @@ class UsersRecordsController extends Controller
         return view('admin.components.users.index', compact('users'));
     }
 
+    public function api()
+    {
+        return User::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -40,13 +45,13 @@ class UsersRecordsController extends Controller
         ]);
 
         $users = new User;
-        $users -> name = $request -> input('name');
-        $users -> email = $request -> input('email');
-        $users -> password = $request -> input('password');
-        $users -> type = $request -> input('type');
-        $users -> save();
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->password = $request->input('password');
+        $users->type = $request->input('type');
+        $users->save();
 
-        return redirect('/admin/users') -> with('success', 'Users created successfully.');
+        return redirect('/admin/users')->with('success', 'Users created successfully.');
     }
 
     /**
@@ -73,14 +78,13 @@ class UsersRecordsController extends Controller
     public function update(Request $request, string $id)
     {
         $users = User::findOrFail($id);
-        $users -> name = $request -> input('name');
-        $users -> email = $request -> input('email');
-        $users -> password = $request -> input('password');
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->password = $request->input('password');
         // $users -> type = $request -> input('type');
-        $users -> save();
+        $users->save();
 
-        return redirect('/admin/users') -> with('success', 'Users updated successfully.');
-
+        return redirect('/admin/users')->with('success', 'Users updated successfully.');
     }
 
     /**
@@ -89,7 +93,7 @@ class UsersRecordsController extends Controller
     public function destroy(string $id)
     {
         $users = User::findOrFail($id);
-        $users -> delete();
-        return redirect('/admin/users') -> with('success', 'Users deleted successfully.');
+        $users->delete();
+        return redirect('/admin/users')->with('success', 'Users deleted successfully.');
     }
 }
