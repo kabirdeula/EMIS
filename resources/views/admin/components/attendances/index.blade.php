@@ -33,8 +33,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Student</th>
-                            <th>Date</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -42,34 +40,21 @@
                         <tr>
                             <th>ID</th>
                             <th>Student</th>
-                            <th>Date</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        @forelse ($attendances as $attendance)
+                        @forelse ($students as $student)
                             <tr>
-                                <td>{{ $attendance->id }}</td>
+                                <td>{{ $student->id }}</td>
                                 <td><a
-                                        href="{{ route('attendances.show', $attendance->id) }}">{{ optional($attendance->user)->name }}</a>
+                                        href="{{ route('attendances.show', $student->id) }}">{{ optional($student->user)->name }}</a>
                                 </td>
-                                <td>{{ $attendance->date }}</td>
+
                                 <td>
-                                    @if ($attendance->status === 'absent')
-                                        <button class="btn btn-danger">Absent</button>
-                                    @elseif ($attendance->status === 'present')
-                                        <button class="btn btn-success">Present</button>
-                                    @elseif ($attendance->status === 'late')
-                                        <button class="btn btn-warning">Late</button>
-                                    @else
-                                        <button class="btn btn-secondary">Unknown</button>
-                                    @endif
-                                </td>
-                                <td>
-                                    <a href="{{ route('attendances.edit', $attendance->id) }}" class="btn btn-success"><i
+                                    <a href="{{ route('attendances.edit', $student->id) }}" class="btn btn-success"><i
                                             class="las la-edit"></i></a>
-                                    <form action="{{ route('attendances.destroy', $attendance->id) }}" method="POST"
+                                    <form action="{{ route('attendances.destroy', $student->id) }}" method="POST"
                                         style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
@@ -81,7 +66,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5">No attendance records found.</td>
+                                <td colspan="5" align="center">No attendance records found.</td>
                             </tr>
                         @endforelse
                     </tbody>

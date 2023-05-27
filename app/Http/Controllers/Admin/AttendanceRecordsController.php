@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Attendance;
 use App\Models\Students;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AttendanceRecordsController extends Controller
@@ -14,9 +15,8 @@ class AttendanceRecordsController extends Controller
      */
     public function index()
     {
-        $attendances = Attendance::all();
         $students = Students::all();
-        return view('admin.components.attendances.index', compact('attendances'));
+        return view('admin.components.attendances.index', compact('students'));
     }
 
     /**
@@ -40,12 +40,12 @@ class AttendanceRecordsController extends Controller
         ]);
 
         $attendances = new Attendance();
-        $attendances -> student_id = $request -> input('student_id');
-        $attendances -> date = $request -> input('date');
-        $attendances -> status = $request -> input('status');
-        $attendances -> save();
+        $attendances->student_id = $request->input('student_id');
+        $attendances->date = $request->input('date');
+        $attendances->status = $request->input('status');
+        $attendances->save();
 
-        return redirect() -> route('attendances') -> with('success', 'Attendance added successfully');
+        return redirect()->route('attendances')->with('success', 'Attendance added successfully');
     }
 
     /**
@@ -53,8 +53,27 @@ class AttendanceRecordsController extends Controller
      */
     public function show(string $id)
     {
-        $attendances = Attendance::findOrFail($id);
-        return view('admin.components.attendances.show', compact('attendances'));
+        $student = Students::findOrFail($id);
+
+        // Specify the time range (e.g., May 2023)
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+
+        // Fetch attendance records for the specified time range
+        $attendance = Attendance::where('student_id', $student->id)
+            ->whereBetween('date', [$startOfMonth, $endOfMonth])
+            ->get();
+
+        // Calculate attendance statistics
+        $total_days = $startOfMonth->diffInDays($endOfMonth) + 1;
+        $total_study_days = $total_days - 4;
+        $present_days = $attendance ->where('status', 'present')->count();
+        $absent_days = $attendance ->where('status', 'absent')->count();
+        $late_days = $attendance ->where('status', 'late')->count();
+        $attendance_percentage = (($present_days + $late_days) / $total_study_days) * 100;
+        $attendance_percentage = number_format($attendance_percentage, 2);
+
+        return view('admin.components.attendances.show', compact('student', 'total_days', 'present_days', 'absent_days', 'late_days', 'attendance_percentage'));
     }
 
     /**
@@ -73,12 +92,12 @@ class AttendanceRecordsController extends Controller
     public function update(Request $request, string $id)
     {
         $attendances = Attendance::findOrFail($id);
-        $attendances -> student_id = $request -> input('student_id');
-        $attendances -> date = $request -> input('date');
-        $attendances -> status = $request -> input('status');
-        $attendances -> save();
+        $attendances->student_id = $request->input('student_id');
+        $attendances->date = $request->input('date');
+        $attendances->status = $request->input('status');
+        $attendances->save();
 
-        return redirect() -> route('attendances') -> with('success', 'Attendance updated successfully');
+        return redirect()->route('attendances')->with('success', 'Attendance updated successfully');
     }
 
     /**
@@ -87,8 +106,8 @@ class AttendanceRecordsController extends Controller
     public function destroy(string $id)
     {
         $attendances = Attendance::findOrFail($id);
-        $attendances -> delete();
+        $attendances->delete();
 
-        return redirect() -> route('attendances') -> with('success', 'Attendance deleted successfully');
+        return redirect()->route('attendances')->with('success', 'Attendance deleted successfully');
     }
 }
