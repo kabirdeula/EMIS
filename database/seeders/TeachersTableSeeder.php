@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Teachers;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class TeachersTableSeeder extends Seeder
 {
@@ -14,37 +15,25 @@ class TeachersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        // $teachers = [
 
-        //     [
-        //         'first_name' => 'Chhetra',
-        //         'last_name' => 'Chhetri',
-        //         'user_id' => 6,
-        //         'program_id' => 2,
-        //         'semester_id' => 6,
-        //         'course_id' => 2,
-        //     ],
-
-        //     [
-        //         'first_name' => 'Sumit',
-        //         'last_name' => 'Ghising',
-        //         'user_id' => 7,
-        //         'program_id' => 2,
-        //         'semester_id' => 6,
-        //         'course_id' => 2,
-        //     ],
-
-        // ];
-
-        // foreach($teachers as $key => $teacher){
-        //     Teachers::create($teacher);
-        // }
         $users = User::where('type', 2)
-            -> get();
+            ->get();
+        $programs = DB::table('programs')
+            ->pluck('id')
+            ->toArray();
+        $semesters = DB::table('semesters')
+            ->pluck('id')
+            ->toArray();
+
 
         foreach ($users as $user) {
+            $programId = Arr::random($programs);
+            $semesterId = Arr::random($semesters);
+
             Teachers::create([
                 'user_id' => $user->id,
+                'program_id' => $programId,
+                'semester_id' => $semesterId,
             ]);
         }
     }
