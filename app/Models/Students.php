@@ -20,4 +20,9 @@ class Students extends Model
     public function semester(){
         return $this -> belongsTo(Semester::class, 'semester_id');
     }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Courses::class, 'student_courses', 'student_id', 'course_id');
+    }
 }

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('program_id')->nullable();
             $table->unsignedBigInteger('semester_id')->nullable();
-            $table->unsignedBigInteger('course_id')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('phone_number')->nullable();
             $table->timestamps();
@@ -24,8 +23,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
             $table->foreign('semester_id')->references('id')->on('semesters')->onDelete('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-
         });
     }
 

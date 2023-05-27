@@ -33,13 +33,19 @@
                     <td>{{ optional($students->semester)->code }}</td>
                 </tr>
                 <tr>
+                    <th>Courses</th>
+                    @foreach ($students->courses as $course)
+                        <td>{{ $course->name }}</td>
+                    @endforeach
+                </tr>
+                <tr>
                     <td>
-                        <a href="{{ route('courses.edit', $students->id) }}" class="btn btn-success">
+                        <a href="{{ route('students.edit', $students->id) }}" class="btn btn-success">
                             <i class="las la-graduation-cap"></i>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ url() -> previous() }}" class="btn btn-danger">
+                        <a href="{{ url()->previous() }}" class="btn btn-danger">
                             <i class="las la-undo"></i>
                         </a>
                     </td>

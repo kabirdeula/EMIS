@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             TeachersTableSeeder::class,
             StudentsTableSeeder::class,
+            StudentCoursesTableSeeder::class,
             HolidaysTableSeeder::class,
             AttendanceTableSeeder::class,
         ]);

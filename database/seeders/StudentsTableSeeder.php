@@ -26,13 +26,23 @@ class StudentsTableSeeder extends Seeder
             $phoneNumber = $this->generateRandomMobileNumber();
             $dateOfBirth = $this->generateRandomDateOfBirth();
 
+            $courses = DB::table('programs AS p')
+            ->select('c.id')
+            ->join('courses AS c', function ($join) use ($programId, $semesterId) {
+                $join->on('p.id', '=', 'c.program_id')
+                    ->where('p.id', '=', $programId)
+                    ->where('c.semester_id', '=', $semesterId);
+            })
+            ->pluck('id')
+            ->toArray();
+
             Students::create([
                 'user_id' => $user->id,
                 'program_id' => $programId,
                 'semester_id' => $semesterId,
                 'phone_number' => $phoneNumber,
                 'date_of_birth' => $dateOfBirth,
-            ]);
+            ])->courses()->attach($courses);
         }
     }
 
