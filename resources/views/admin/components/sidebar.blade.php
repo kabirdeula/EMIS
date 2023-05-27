@@ -56,6 +56,13 @@
             </a>
         </li>
 
+        <!-- Nav Item - Holidays -->
+        <li class="nav-item">
+            <a href="{{ route('holidays') }}" class="nav-link">
+                <span>Holidays</span>
+            </a>
+        </li>
+
         <!-- Nav Item - Programs -->
         <li class="nav-item">
             <a href="{{ route('programs') }}" class="nav-link">

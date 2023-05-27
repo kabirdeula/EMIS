@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AttendanceRecordsController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
+use App\Http\Controllers\Admin\HolidaysRecordsController;
 use App\Http\Controllers\Admin\PDFController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
@@ -68,24 +69,46 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/profile/', [AdminProfileController::class, 'show'])->name('admin.profile');
 
     /**
-     *! PDF Group
+     * ! Courses Group
      */
-    Route::get('/admin/user/pdf', [PDFController::class, 'UsersPDF'])->name('users.pdf');
-    Route::get('/admin/student/pdf', [PDFController::class, 'StudentPDF'])->name('students.pdf');
-    Route::get('/admin/teacher/pdf', [PDFController::class, 'TeacherPDF'])->name('teachers.pdf');
-    Route::get('/admin/attendance/pdf', [PDFController::class, 'AttendancePDF'])->name('attendances.pdf');
-
+    Route::get('/admin/courses', [CoursesRecordsController::class, 'index'])->name('courses');
+    Route::get('/admin/courses/create', [CoursesRecordsController::class, 'create'])->name('courses.create');
+    Route::post('/admin/courses', [CoursesRecordsController::class, 'store'])->name('courses.store');
+    Route::get('/admin/courses/{id}', [CoursesRecordsController::class, 'show'])->name('courses.show');
+    Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
+    Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
+    Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
 
     /**
-     *! Users Group
+     * ! Attendance Group
      */
-    Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users');
-    Route::get('/admin/users/create', [UsersRecordsController::class, 'create'])->name('users.create');
-    Route::post('/admin/users/', [UsersRecordsController::class, 'store'])->name('users.store');
-    Route::get('/admin/users/{id}', [UsersRecordsController::class, 'show'])->name('users.show');
-    Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
-    Route::put('/admin/users/{id}', [UsersRecordsController::class, 'update'])->name('users.update');
-    Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
+    Route::get('/admin/attendances', [AttendanceRecordsController::class, 'index'])->name('attendances');
+    Route::get('/admin/attendances/create', [AttendanceRecordsController::class, 'create'])->name('attendances.create');
+    Route::post('/admin/attendances', [AttendanceRecordsController::class, 'store'])->name('attendances.store');
+    Route::get('/admin/attendances/{id}', [AttendanceRecordsController::class, 'show'])->name('attendances.show');
+    Route::get('/admin/attendances/{id}/edit', [AttendanceRecordsController::class, 'edit'])->name('attendances.edit');
+    Route::put('/admin/attendances/{id}', [AttendanceRecordsController::class, 'update'])->name('attendances.update');
+    Route::delete('/admin/attendances/{id}', [AttendanceRecordsController::class, 'destroy'])->name('attendances.destroy');
+
+    /**
+     * ! Holidays Group
+     */
+    Route::get('/admin/holidays', [HolidaysRecordsController::class, 'index'])->name('holidays');
+    Route::get('/admin/holidays/create', [HolidaysRecordsController::class, 'create'])->name('holidays.create');
+    Route::post('/admin/holidays', [HolidaysRecordsController::class, 'store'])->name('holidays.store');
+    Route::get('/admin/holidays/{id}', [HolidaysRecordsController::class, 'show'])->name('holidays.show');
+    Route::get('/admin/holidays/{id}/edit', [HolidaysRecordsController::class, 'edit'])->name('holidays.edit');
+    Route::put('/admin/holidays/{id}', [HolidaysRecordsController::class, 'update'])->name('holidays.update');
+    Route::delete('/admin/holidays/{id}', [HolidaysRecordsController::class, 'destroy'])->name('holidays.destroy');
+
+    /**
+     *! PDF Group
+     */
+    Route::get('/admin/pdf/attendance', [PDFController::class, 'AttendancePDF'])->name('attendances.pdf');
+    Route::get('/admin/pdf/holiday', [PDFController::class, 'HolidayPDF'])->name('holidays.pdf');
+    Route::get('/admin/pdf/student', [PDFController::class, 'StudentPDF'])->name('students.pdf');
+    Route::get('/admin/pdf/teacher', [PDFController::class, 'TeacherPDF'])->name('teachers.pdf');
+    Route::get('/admin/pdf/user', [PDFController::class, 'UsersPDF'])->name('users.pdf');
 
     /**
      * ! Programs Group
@@ -97,17 +120,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/programs/{id}/edit', [ProgramsRecordsController::class, 'edit'])->name('programs.edit');
     Route::put('/admin/programs/{id}', [ProgramsRecordsController::class, 'update'])->name('programs.update');
     Route::delete('/admin/programs/{id}', [ProgramsRecordsController::class, 'destroy'])->name('programs.destroy');
-
-    /**
-     * ! Courses Group
-     */
-    Route::get('/admin/courses', [CoursesRecordsController::class, 'index'])->name('courses');
-    Route::get('/admin/courses/create', [CoursesRecordsController::class, 'create'])->name('courses.create');
-    Route::post('/admin/courses', [CoursesRecordsController::class, 'store'])->name('courses.store');
-    Route::get('/admin/courses/{id}', [CoursesRecordsController::class, 'show'])->name('courses.show');
-    Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
-    Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
-    Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
 
     /**
      * ! Students Group
@@ -132,15 +144,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::delete('/admin/teachers/{id}', [TeachersRecordsController::class, 'destroy'])->name('teachers.destroy');
 
     /**
-     * ! Attendance Group
+     *! Users Group
      */
-    Route::get('/admin/attendances', [AttendanceRecordsController::class, 'index'])->name('attendances');
-    Route::get('/admin/attendances/create', [AttendanceRecordsController::class, 'create'])->name('attendances.create');
-    Route::post('/admin/attendances', [AttendanceRecordsController::class, 'store'])->name('attendances.store');
-    Route::get('/admin/attendances/{id}', [AttendanceRecordsController::class, 'show'])->name('attendances.show');
-    Route::get('/admin/attendances/{id}/edit', [AttendanceRecordsController::class, 'edit'])->name('attendances.edit');
-    Route::put('/admin/attendances/{id}', [AttendanceRecordsController::class, 'update'])->name('attendances.update');
-    Route::delete('/admin/attendances/{id}', [AttendanceRecordsController::class, 'destroy'])->name('attendances.destroy');
+    Route::get('/admin/users', [UsersRecordsController::class, 'index'])->name('users');
+    Route::get('/admin/users/create', [UsersRecordsController::class, 'create'])->name('users.create');
+    Route::post('/admin/users/', [UsersRecordsController::class, 'store'])->name('users.store');
+    Route::get('/admin/users/{id}', [UsersRecordsController::class, 'show'])->name('users.show');
+    Route::get('/admin/users/{id}/edit', [UsersRecordsController::class, 'edit'])->name('users.edit');
+    Route::put('/admin/users/{id}', [UsersRecordsController::class, 'update'])->name('users.update');
+    Route::delete('/admin/users/{id}/', [UsersRecordsController::class, 'destroy'])->name('users.destroy');
 });
 
 /*------------------------------------------

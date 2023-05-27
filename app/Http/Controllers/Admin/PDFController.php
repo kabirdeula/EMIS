@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Attendance;
+use App\Models\Holidays;
 use App\Models\Students;
 use App\Models\Teachers;
 use App\Models\User;
@@ -27,6 +28,21 @@ class PDFController extends Controller
         $pdf -> render();
 
         $pdf -> stream('attendances.pdf');
+    }
+
+    public function HolidayPDF()
+    {
+        // Fetching table data from the database.
+        $holidays = Holidays::all();
+
+        $pdf = new Dompdf();
+        $pdf -> loadHtml(View::make('admin.components.pdf.holidays')->with('holidays', $holidays)->render());
+
+        $pdf -> setPaper('A4', 'portrait');
+
+        $pdf -> render();
+
+        $pdf -> stream('holidays.pdf');
     }
 
     public function StudentPDF()
