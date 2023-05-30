@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AttendanceRecordsController;
 use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\HolidaysRecordsController;
+use App\Http\Controllers\Admin\MarksRecordsController;
 use App\Http\Controllers\Admin\PDFController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
@@ -89,6 +90,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/attendances/{id}/edit', [AttendanceRecordsController::class, 'edit'])->name('attendances.edit');
     Route::put('/admin/attendances/{id}', [AttendanceRecordsController::class, 'update'])->name('attendances.update');
     Route::delete('/admin/attendances/{id}', [AttendanceRecordsController::class, 'destroy'])->name('attendances.destroy');
+
+    /**
+     * ! Marks Group
+     */
+    Route::get('/admin/marks', [MarksRecordsController::class, 'index'])->name('marks');
+    Route::get('/admin/marks/create', [MarksRecordsController::class, 'create'])->name('marks.create');
+    Route::post('/admin/marks/store', [MarksRecordsController::class, 'store'])->name('marks.store');
+    Route::get('/admin/marks/{id}', [MarksRecordsController::class, 'show'])->name('marks.show');
+    Route::get('/admin/marks/{id}/edit', [MarksRecordsController::class, 'edit'])->name('marks.edit');
+    Route::put('/admin/marks/{id}', [MarksRecordsController::class, 'update'])->name('marks.update');
+    Route::delete('/admin/marks/{id}', [MarksRecordsController::class, 'destroy'])->name('marks.destroy');
 
     /**
      * ! Holidays Group

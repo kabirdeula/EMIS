@@ -63,6 +63,13 @@
             </a>
         </li>
 
+        <!-- Nav Item - Marks -->
+        <li class="nav-item">
+            <a href="{{ route('marks') }}" class="nav-link">
+                <span>Marks</span>
+            </a>
+        </li>
+
         <!-- Nav Item - Programs -->
         <li class="nav-item">
             <a href="{{ route('programs') }}" class="nav-link">

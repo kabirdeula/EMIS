@@ -16,4 +16,9 @@ class Courses extends Model
     public function semester(){
         return $this -> belongsTo(Semester::class, 'semester_id');
     }
+
+    public function marks()
+    {
+        return $this->hasMany(Marks::class, 'course_id');
+    }
 }
