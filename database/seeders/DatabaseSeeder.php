@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             HolidaysTableSeeder::class,
             AttendanceTableSeeder::class,
             MarksTableSeeder::class,
+            AttendanceStatusTableSeeder::class,
         ]);
     }
 }

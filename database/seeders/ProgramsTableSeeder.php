@@ -15,27 +15,27 @@ class ProgramsTableSeeder extends Seeder
     {
         $programs = [
             [
-                'name' => 'Bachelor of Business Management',
+                'name' => "Bachelor's of Business Management",
                 'code' => 'BBM'
             ],
 
             [
-                'name' => 'Bachelor of Computer Application',
+                'name' => "Bachelor's of Computer Application",
                 'code' => 'BCA'
             ],
 
             [
-                'name' => 'Bachelor of Hotel Management',
+                'name' => "Bachelor's of Hotel Management",
                 'code' => 'BHM'
             ],
 
             [
-                'name' => 'Bachelor of Information Management',
+                'name' => "Bachelor's of Information Management",
                 'code' => 'BIM'
             ],
 
             [
-                'name' => 'Bachelor of Science in Computer Science & Information Technology',
+                'name' => "Bachelor's of Science in Computer Science & Information Technology",
                 'code' => 'BSc.CSIT'
             ],
         ];

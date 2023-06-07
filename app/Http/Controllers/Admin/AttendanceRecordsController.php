@@ -56,18 +56,23 @@ class AttendanceRecordsController extends Controller
         $student = Students::findOrFail($id);
 
         // Specify the time range (e.g., May 2023)
-        $startOfMonth = Carbon::now()->startOfMonth();
-        $endOfMonth = Carbon::now()->endOfMonth();
+        $startOfYear = Carbon::now()->startOfYear();
+        $endOfYear = Carbon::now()->endOfYear();
 
+        // dd($startOfYear);
+        // dd($endOfYear);
         // Fetch attendance records for the specified time range
         $attendance = Attendance::where('student_id', $student->id)
-            ->whereBetween('date', [$startOfMonth, $endOfMonth])
+            ->whereBetween('date', [$startOfYear, $endOfYear])
             ->get();
 
+        // dd($attendance);
+
         // Calculate attendance statistics
-        $total_days = $startOfMonth->diffInDays($endOfMonth) + 1;
+        $total_days = $startOfYear->diffInDays($endOfYear) + 1;
         $total_study_days = $total_days - 4;
         $present_days = $attendance ->where('status', 'present')->count();
+        // dd($present_days);
         $absent_days = $attendance ->where('status', 'absent')->count();
         $late_days = $attendance ->where('status', 'late')->count();
         $attendance_percentage = (($present_days + $late_days) / $total_study_days) * 100;

@@ -19,15 +19,16 @@ class MarksTableSeeder extends Seeder
         $courses = Courses::all();
 
         foreach ($students as $student) {
-            foreach ($courses as $course) {
-                $marks = rand(30, 100);
+            // for ($i = 1; $i <= 5; $i++) {
+                $course = $courses->random();
+                $marks = rand(0, 100);
 
                 Marks::create([
                     'student_id' => $student->id,
                     'course_id' => $course->id,
                     'marks' => $marks,
                 ]);
-            }
+            // }
         }
     }
 }
