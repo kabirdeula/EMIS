@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PDFController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
 use App\Http\Controllers\Admin\TeachersRecordsController;
+use App\Http\Controllers\Admin\TrainAndTestController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 
 use App\Http\Controllers\Student\StudentController;
@@ -70,15 +71,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/profile/', [AdminProfileController::class, 'show'])->name('admin.profile');
 
     /**
-     * ! Courses Group
+     * ! Algorithm
      */
-    Route::get('/admin/courses', [CoursesRecordsController::class, 'index'])->name('courses');
-    Route::get('/admin/courses/create', [CoursesRecordsController::class, 'create'])->name('courses.create');
-    Route::post('/admin/courses', [CoursesRecordsController::class, 'store'])->name('courses.store');
-    Route::get('/admin/courses/{id}', [CoursesRecordsController::class, 'show'])->name('courses.show');
-    Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
-    Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
-    Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
+    Route::get('/admin/train', [TrainAndTestController::class, 'index'])->name('prediction');
 
     /**
      * ! Attendance Group
@@ -91,6 +86,17 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::put('/admin/attendances/{id}', [AttendanceRecordsController::class, 'update'])->name('attendances.update');
     Route::delete('/admin/attendances/{id}', [AttendanceRecordsController::class, 'destroy'])->name('attendances.destroy');
 
+
+    /**
+     * ! Courses Group
+     */
+    Route::get('/admin/courses', [CoursesRecordsController::class, 'index'])->name('courses');
+    Route::get('/admin/courses/create', [CoursesRecordsController::class, 'create'])->name('courses.create');
+    Route::post('/admin/courses', [CoursesRecordsController::class, 'store'])->name('courses.store');
+    Route::get('/admin/courses/{id}', [CoursesRecordsController::class, 'show'])->name('courses.show');
+    Route::get('/admin/courses/{id}/edit', [CoursesRecordsController::class, 'edit'])->name('courses.edit');
+    Route::put('/admin/courses/{id}', [CoursesRecordsController::class, 'update'])->name('courses.update');
+    Route::delete('/admin/courses/{id}', [CoursesRecordsController::class, 'destroy'])->name('courses.destroy');
     /**
      * ! Marks Group
      */
@@ -195,3 +201,4 @@ All Parent Routes List
 Route::middleware(['auth', 'user-access:parent'])->group(function () {
     Route::get('/parent/home', [ParentController::class, 'index'])->name('parent.home');
 });
+
