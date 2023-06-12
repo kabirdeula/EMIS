@@ -70,6 +70,13 @@
             </a>
         </li>
 
+        <!-- Nav Item - Prediction -->
+        <li class="nav-item">
+            <a href="{{ route('prediction') }}" class="nav-link">
+                <span>Prediction</span>
+            </a>
+        </li>
+
         <!-- Nav Item - Programs -->
         <li class="nav-item">
             <a href="{{ route('programs') }}" class="nav-link">

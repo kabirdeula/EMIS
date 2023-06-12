@@ -30,4 +30,9 @@ class Students extends Model
     {
         return $this->hasMany(Marks::class, 'student_id');
     }
+
+    public function attendanceStatus()
+    {
+        return $this->hasMany(AttendanceStatus::class, 'student_id');
+    }
 }
