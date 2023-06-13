@@ -1,0 +1,113 @@
+@startuml AdminControllerClassDiagram
+left to right direction
+
+class AdminController{
+    +__construct()
+    +index()
+}
+
+class AttendanceRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class CoursesRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class HolidaysRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class MarksRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class PDFController{
+    +AttendancePDF()
+    +HolidayPDF()
+    +StudentPDF()
+    +TeacherPDF()
+    +UsersPDF()
+}
+
+class ProgramsRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class StudentsRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class TeachersRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+class UsersRecordsController{
+    +index()
+    +create()
+    +store()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+}
+
+
+abstract class BaseController{}
+Controller --> BaseController
+
+AdminController --> Controller
+AttendanceRecordsController --> Controller
+CoursesRecordsController --> Controller
+HolidaysRecordsController --> Controller
+MarksRecordsController --> Controller
+PDFController --> Controller
+ProgramsRecordsController --> Controller
+StudentsRecordsController --> Controller
+TeachersRecordsController --> Controller
+UsersRecordsController --> Controller
+
+
+@enduml
