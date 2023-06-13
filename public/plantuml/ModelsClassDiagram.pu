@@ -1,0 +1,48 @@
+@startuml ModelsClassDiagram
+left to right direction
+
+class Attendance{
+    +user()
+}
+
+class AttendanceStatus{
+    +student()
+}
+
+class Courses{
+    +program()
+    +semester()
+    +marks()
+}
+
+class Marks{
+    +student()
+    +course()
+}
+
+class Model{
+}
+
+class Students{
+    +attendanceStatus()
+    +courses()
+    +marks()
+    +program()
+    +semester()
+    +user()
+}
+
+class Teachers{
+    +program()
+    +semester()
+    +user()
+}
+
+Attendance --> Model
+AttendanceStatus --> Model
+Courses --> Model
+Marks --> Model
+Students --> Model
+Teachers --> Model
+
+@enduml
