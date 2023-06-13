@@ -36,6 +36,10 @@ class HolidaysRecordsController{
     +destroy()
 }
 
+class LoginController{
+    +login()
+}
+
 class MarksRecordsController{
     +index()
     +create()
@@ -102,6 +106,7 @@ AdminController --> Controller
 AttendanceRecordsController --> Controller
 CoursesRecordsController --> Controller
 HolidaysRecordsController --> Controller
+LoginController --> Controller
 MarksRecordsController --> Controller
 PDFController --> Controller
 ProgramsRecordsController --> Controller
