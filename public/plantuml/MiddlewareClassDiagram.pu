@@ -1,0 +1,23 @@
+@startuml MiddlewareClassDiagram
+left to right direction
+
+class Authenticate{
+    +redirect()
+}
+
+class RedirectIfAuthenticated{
+    +handle()
+}
+
+class TrustHosts{
+    +hosts()
+}
+
+class Middleware{
+}
+
+Authenticate --> Middleware
+RedirectIfAuthenticated --> Middleware
+TrustHosts --> Middleware
+
+@enduml
