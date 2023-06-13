@@ -1,0 +1,16 @@
+@startuml DiagramTest2
+!define LaravelCode
+!define LaravelCodeClasses
+!define LaravelCodeRelations
+!define LaravelCodeAssociations
+!define LaravelCodeDependency
+!define LaravelCodeAggregations
+!define LaravelCodeCompositions
+!define LaravelCode(project_dir="/")
+!define LaravelCodeClasses(class_dir="app/", exclude="app/Http")
+!define LaravelCodeRelations(include="app/Http")
+!define LaravelCodeAssociations(include="app/Models")
+!define LaravelCodeDependency(include="app/Services")
+!define LaravelCodeAggregations(include="app/Repositories")
+!define LaravelCodeCompositions(include="app/Jobs")
+@enduml

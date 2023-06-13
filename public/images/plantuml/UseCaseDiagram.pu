@@ -1,0 +1,32 @@
+@startuml UseCaseDiagram
+left to right direction
+skinparam actorStyle awesome
+
+actor Admin
+
+package "UniLink"{
+
+    Admin -- (Manage Attendances)
+    Admin -- (Manage Courses)
+    Admin -- (Manage Programs)
+    Admin -- (Manage Users)
+    Admin -- (Assign Roles)
+    Admin -- (View Users)
+
+    (Manage Courses) -- (Create Course)
+    (Manage Courses) -- (Edit Course)
+    (Manage Courses) -- (Delete Course)
+
+    (Manage Programs) -- (Create Program)
+    (Manage Programs) -- (Edit Program)
+    (Manage Programs) -- (Delete Program)
+
+    (Manage Users) -- (Create User)
+    (Manage Users) -- (Edit User)
+    (Manage Users) -- (Delete User)
+
+    (Assign Roles) -- (Student)
+    (Assign Roles) -- (Super Admin)
+    (Assign Roles) -- (Teacher)
+}
+@enduml
