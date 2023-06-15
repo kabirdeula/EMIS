@@ -16,150 +16,234 @@ class UsersTableSeeder extends Seeder
         $users = [
 
             [
+                'name' => 'Aaisha Deula',
+                'email' => 'aaishadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('aaisha@123'),
+            ],
+
+            [
                 'name' => 'Aakash Poudel',
                 'email' => 'aakashpoudel@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('aakash123'),
+                'password' => bcrypt('aakash@123'),
             ],
 
             [
                 'name' => 'Aayush Raj Manandhar',
                 'email' => 'aayushmanandhar@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('aayush123'),
+                'password' => bcrypt('aayush@123'),
             ],
 
             [
                 'name' => 'Aayush Shakya',
                 'email' => 'aayushshakya@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('aayush123'),
+                'password' => bcrypt('aayush@123'),
             ],
 
             [
                 'name' => 'Aayushma Adhikari',
                 'email' => 'aayushmaadhikari@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('aayushma123'),
+                'password' => bcrypt('aayushma@123'),
             ],
 
             [
                 'name' => 'Ajay Adhikari',
                 'email' => 'ajayadhikari@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ajay123'),
+                'password' => bcrypt('ajay@123'),
+            ],
+
+            [
+                'name' => 'Alisha Deula',
+                'email' => 'alishadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('alisha@123'),
+            ],
+
+            [
+                'name' => 'Aleena Deula',
+                'email' => 'aleenadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('aleena@123'),
             ],
 
             [
                 'name' => 'Ameena Gurung',
                 'email' => 'ameenagurung@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ameena123'),
+                'password' => bcrypt('ameena@123'),
+            ],
+
+            [
+                'name' => 'Ameesha Deula',
+                'email' => 'ameeshadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('ameesha@123'),
+            ],
+
+            [
+                'name' => 'Aneela Maharjan',
+                'email' => 'aneelamaharjan@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('aneela@123'),
+            ],
+
+            [
+                'name' => 'Anehsa Deula',
+                'email' => 'aneshadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('anesha@123'),
             ],
 
             [
                 'name' => 'Anjali Tandukar',
                 'email' => 'anjalitandukar@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('anjali123'),
+                'password' => bcrypt('anjali@123'),
             ],
 
             [
                 'name' => 'Anjila Sthapit',
                 'email' => 'anjilasthapit@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('anjila123'),
+                'password' => bcrypt('anjila@123'),
             ],
 
             [
                 'name' => 'Ankush Sharma',
                 'email' => 'ankushsharma@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ankush123'),
+                'password' => bcrypt('ankush@123'),
+            ],
+
+            [
+                'name' => 'Anne Pujari',
+                'email' => 'annepujari@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('anne@123'),
             ],
 
             [
                 'name' => 'Anup Pathak',
                 'email' => 'anuppathak@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('anup123'),
+                'password' => bcrypt('anup@123'),
+            ],
+
+            [
+                'name' => 'Anusha Adhikari',
+                'email' => 'anushaadhikari@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('anusha@123'),
+            ],
+
+            [
+                'name' => 'Anushka Deula',
+                'email' => 'anushkadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('anushka@123'),
             ],
 
             [
                 'name' => 'Anuska Shahi',
                 'email' => 'anuskashahi@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('anuska123'),
+                'password' => bcrypt('anuska@123'),
+            ],
+
+            [
+                'name' => 'Anuska Tamrakar',
+                'email' => 'anuskatamrakar@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('anuska@123'),
             ],
 
             [
                 'name' => 'Arjun Thapa Magar',
                 'email' => 'arjunthapamagar@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('arjun123'),
+                'password' => bcrypt('arjun@123'),
             ],
 
             [
                 'name' => 'Arshi Baniya',
                 'email' => 'arshibaniya@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('arshi123'),
+                'password' => bcrypt('arshi@123'),
             ],
 
             [
                 'name' => 'Ashma Thapa Magar',
                 'email' => 'ashmathapamagar@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ashma123'),
+                'password' => bcrypt('ashma@123'),
+            ],
+
+            [
+                'name' => 'Asmita Khatiwada',
+                'email' => 'asmitakhatiwada@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('asmita@123'),
             ],
 
             [
                 'name' => 'Ayush Manandhar',
                 'email' => 'ayushmanandhar@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ayush123'),
+                'password' => bcrypt('ayush@123'),
             ],
 
             [
                 'name' => 'Ayushma Shrestha',
                 'email' => 'ayushmashrestha@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('ayushma123'),
+                'password' => bcrypt('ayushma@123'),
+            ],
+
+            [
+                'name' => 'Bhumika Gurung',
+                'email' => 'bhumikagurung@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('bhumika@123'),
             ],
 
             [
                 'name' => 'Bhuwan Singh',
                 'email' => 'bhuwansingh@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('bhuwan123'),
+                'password' => bcrypt('bhuwan@123'),
             ],
 
             [
                 'name' => 'Bibek Karki',
                 'email' => 'bibekkarki@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('bibek123'),
+                'password' => bcrypt('bibek@123'),
             ],
 
             [
                 'name' => 'Bibek Pandit',
                 'email' => 'bibekpandit@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('bibek123'),
+                'password' => bcrypt('bibek@123'),
             ],
 
             [
                 'name' => 'Bijina Maharjan',
                 'email' => 'bijinamaharjan@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('bijina123'),
+                'password' => bcrypt('bijina@123'),
             ],
 
             [
                 'name' => 'Binit Bohara',
                 'email' => 'binitbohara@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('binit123'),
+                'password' => bcrypt('binit@123'),
             ],
 
             [
@@ -167,6 +251,27 @@ class UsersTableSeeder extends Seeder
                 'email' => 'binodmanitiwari@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('binod@123'),
+            ],
+
+            [
+                'name' => 'Bitisha Shrestha',
+                'email' => 'bitishashrestha@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('bitisha@123'),
+            ],
+
+            [
+                'name' => 'Brinda Deula',
+                'email' => 'brindadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('brinda@123'),
+            ],
+
+            [
+                'name' => 'Britisha Deula',
+                'email' => 'britishadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('britisha@123'),
             ],
 
             [
@@ -191,6 +296,13 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Cristia Deula',
+                'email' => 'cristinadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('cristina@123'),
+            ],
+
+            [
                 'name' => 'Deepali Adhikari',
                 'email' => 'deepaliadhikari@gmail.com',
                 'type' => 0,
@@ -198,8 +310,29 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Deepika Bramha',
+                'email' => 'deepikabramha@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('deepika@123'),
+            ],
+
+            [
+                'name' => 'Deepika Dangol',
+                'email' => 'deepikadangol@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('deepika@123'),
+            ],
+
+            [
                 'name' => 'Deeya Pandey',
                 'email' => 'deeyapandey@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('deeya@123'),
+            ],
+
+            [
+                'name' => 'Deeya Pujari',
+                'email' => 'deeyapujari@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('deeya@123'),
             ],
@@ -219,6 +352,27 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Dipika Deula',
+                'email' => 'dipikadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('dipika@123'),
+            ],
+
+            [
+                'name' => 'Diya Budhathoki',
+                'email' => 'diyabudhathoki@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('diya@123'),
+            ],
+
+            [
+                'name' => 'Esha Deula',
+                'email' => 'eshadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('esha@123'),
+            ],
+
+            [
                 'name' => 'Gagan Acharya',
                 'email' => 'gaganacharya@gmail.com',
                 'type' => 0,
@@ -230,6 +384,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'garimamaharjan@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('garima@123'),
+            ],
+
+            [
+                'name' => 'Geeta Deula',
+                'email' => 'geetadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('geeta@123'),
             ],
 
             [
@@ -247,6 +408,13 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Hina Deula',
+                'email' => 'hinadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('hina@123'),
+            ],
+
+            [
                 'name' => 'Isha Rana Magar',
                 'email' => 'isharanamagar@gmail.com',
                 'type' => 0,
@@ -258,6 +426,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'jamirmaharjan@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('jamir@123'),
+            ],
+
+            [
+                'name' => 'Jeena Maharjan',
+                'email' => 'jeenamaharjan@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('jeena@123'),
             ],
 
             [
@@ -303,10 +478,45 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Krisha Deula',
+                'email' => 'krishadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('krisha@123'),
+            ],
+
+            [
+                'name' => 'Kritika Dangol',
+                'email' => 'kritikadangol@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('kritika@123'),
+            ],
+
+            [
                 'name' => 'Lasata Shakya',
                 'email' => 'lasatashakya@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('lasata@123'),
+            ],
+
+            [
+                'name' => 'Lina Deula',
+                'email' => 'linadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('lina@123'),
+            ],
+
+            [
+                'name' => 'Lina Manandhar',
+                'email' => 'linamanandhar@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('lina@123'),
+            ],
+
+            [
+                'name' => 'Liza Deula',
+                'email' => 'lizadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('liza@123'),
             ],
 
             [
@@ -373,10 +583,24 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Prabha Deula',
+                'email' => 'prabhadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('prabha@123'),
+            ],
+
+            [
                 'name' => 'Prabin Thapa Magar',
                 'email' => 'prabinthapamagar@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('prabin@123'),
+            ],
+
+            [
+                'name' => 'Prachi Deula',
+                'email' => 'prachideula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('prachi@123'),
             ],
 
             [
@@ -405,6 +629,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'prazitakc@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('prazita@123'),
+            ],
+
+            [
+                'name' => 'Prinsa Maharjan',
+                'email' => 'prinsamaharjan@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('prinsa@123'),
             ],
 
             [
@@ -464,6 +695,20 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Riya Deula',
+                'email' => 'riyadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('riya@123'),
+            ],
+
+            [
+                'name' => 'Rohina Deula',
+                'email' => 'rohinadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('rohina@123'),
+            ],
+
+            [
                 'name' => 'Rojina Ruwali',
                 'email' => 'rojinaruwali@gmail.com',
                 'type' => 0,
@@ -489,6 +734,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'roshanthapamagar@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('roshan@123'),
+            ],
+
+            [
+                'name' => 'Roshika Deula',
+                'email' => 'roshikadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('roshika@123'),
             ],
 
             [
@@ -548,6 +800,13 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
+                'name' => 'Samikshya Bishwokarma',
+                'email' => 'samikshyabishwokarma@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('samikshya@123'),
+            ],
+
+            [
                 'name' => 'Samir Dotel',
                 'email' => 'samirdotel@gmail.com',
                 'type' => 0,
@@ -572,7 +831,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Sanisha Maharjan',
                 'email' => 'msanisha01@gmail.com',
                 'type' => 0,
-                'password' => bcrypt('chandan123'),
+                'password' => bcrypt('chandan@123'),
             ],
 
             [
@@ -594,6 +853,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'santoshgurung@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('santosh@123'),
+            ],
+
+            [
+                'name' => 'Saru Deula',
+                'email' => 'sarudeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('saru@123'),
             ],
 
             [
@@ -622,6 +888,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'sherbahadurkhadka@gmail.com',
                 'type' => 0,
                 'password' => bcrypt('sher@123'),
+            ],
+
+            [
+                'name' => 'Shikha Deula',
+                'email' => 'shikhadeula@gmail.com',
+                'type' => 0,
+                'password' => bcrypt('shikha@123'),
             ],
 
             [
@@ -726,7 +999,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Student',
                 'email' => 'student@example.com',
                 'type' => 0,
-                'password' => bcrypt('student123'),
+                'password' => bcrypt('student@123'),
             ],
 
             [
@@ -807,18 +1080,18 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Admin User',
                 'email' => 'admin@example.com',
                 'type' => 1,
-                'password' => bcrypt('admin123'),
+                'password' => bcrypt('admin@123'),
             ],
 
             /**
-            ** Teachers
+            *! Teachers
             */
 
             [
                 'name' => 'Chhetra Bahadur Chhetri',
                 'email' => 'chhetrachhetri@gmail.com',
                 'type' => 2,
-                'password' => bcrypt('chetri123'),
+                'password' => bcrypt('chetri@123'),
             ],
 
             [
@@ -826,6 +1099,13 @@ class UsersTableSeeder extends Seeder
                 'email' => 'dineshkhadka@gmail.com',
                 'type' => 2,
                 'password' => bcrypt('dinesh@123'),
+            ],
+
+            [
+                'name' => 'Jayan Kapali',
+                'email' => 'jayankapali@gmail.com',
+                'type' => 2,
+                'password' => bcrypt('jayan@123'),
             ],
 
             [
@@ -902,14 +1182,14 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Sumit Ghising',
                 'email' => 'sumitghising@gmail.com',
                 'type' => 2,
-                'password' => bcrypt('sumit123'),
+                'password' => bcrypt('sumit@123'),
             ],
 
             [
                 'name' => 'Teacher',
                 'email' => 'teacher@example.com',
                 'type' => 2,
-                'password' => bcrypt('teacher123'),
+                'password' => bcrypt('teacher@123'),
             ],
 
             [
@@ -934,7 +1214,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Parent',
                 'email' => 'parent@example.com',
                 'type' => 3,
-                'password' => bcrypt('parent123'),
+                'password' => bcrypt('parent@123'),
             ],
 
         ];
