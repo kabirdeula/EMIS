@@ -13,7 +13,7 @@ class ProgramsRecordsController extends Controller
      */
     public function index()
     {
-        $programs = Programs::all();
+        $programs = Programs::paginate(5);
         return view('admin.components.programs.index', compact('programs'));
     }
 

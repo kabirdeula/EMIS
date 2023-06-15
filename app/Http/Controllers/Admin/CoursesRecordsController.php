@@ -15,7 +15,7 @@ class CoursesRecordsController extends Controller
      */
     public function index()
     {
-        $courses = Courses::all();
+        $courses = Courses::paginate(5);
         return view('admin.components.courses.index', compact('courses'));
     }
 

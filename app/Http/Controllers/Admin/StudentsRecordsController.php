@@ -18,7 +18,7 @@ class StudentsRecordsController extends Controller
      */
     public function index()
     {
-        $students = Students::all();
+        $students = Students::paginate(5);
         $bbm_count = Students::where('program_id', 1)->count();
         $bca_count = Students::where('program_id', 2)->count();
         $bhm_count = Students::where('program_id', 3)->count();

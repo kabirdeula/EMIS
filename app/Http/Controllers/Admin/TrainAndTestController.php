@@ -16,7 +16,7 @@ class TrainAndTestController extends Controller
 
         // Train the classifier
 
-        $students = Students::all();
+        $students = Students::paginate(5);
 
         $studentCount = count($students);
 

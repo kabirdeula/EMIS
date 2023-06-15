@@ -13,7 +13,7 @@ class HolidaysRecordsController extends Controller
      */
     public function index()
     {
-        $holidays = Holidays::all();
+        $holidays = Holidays::paginate(5);
         return view('admin.components.holidays.index', compact('holidays'));
     }
 

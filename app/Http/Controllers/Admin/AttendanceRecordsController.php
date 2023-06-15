@@ -15,7 +15,7 @@ class AttendanceRecordsController extends Controller
      */
     public function index()
     {
-        $students = Students::all();
+        $students = Students::paginate(5);
         return view('admin.components.attendances.index', compact('students'));
     }
 
@@ -113,6 +113,6 @@ class AttendanceRecordsController extends Controller
         $attendances = Attendance::findOrFail($id);
         $attendances->delete();
 
-        return redirect()->route('attendances')->with('success', 'Attendance deleted successfully');
+        return redirect()->route('attendances')->with('danger', 'Attendance deleted successfully');
     }
 }
