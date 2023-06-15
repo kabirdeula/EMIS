@@ -94,6 +94,6 @@ class UsersRecordsController extends Controller
     {
         $users = User::findOrFail($id);
         $users->delete();
-        return redirect('/admin/users')->with('success', 'Users deleted successfully.');
+        return redirect('/admin/users')->with('danger', 'Users deleted successfully.');
     }
 }

@@ -82,6 +82,6 @@ class ProgramsRecordsController extends Controller
         $programs = Programs::findOrFail($id);
         $programs -> delete();
 
-        return redirect() -> route('programs') -> with('success', 'Program deleted successfully');
+        return redirect() -> route('programs') -> with('danger', 'Program deleted successfully');
     }
 }

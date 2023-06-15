@@ -100,6 +100,6 @@ class TeachersRecordsController extends Controller
         $teachers = Teachers::findOrFail($id);
         $teachers -> delete();
 
-        return redirect() -> route('teachers') -> with('success', 'Teacher deleted successfully');
+        return redirect() -> route('teachers') -> with('danger', 'Teacher deleted successfully');
     }
 }
