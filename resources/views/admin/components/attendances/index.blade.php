@@ -3,6 +3,7 @@
 @section('title', 'Attendances | UniLink')
 
 @section('content')
+
     {{-- Page Heading --}}
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-2 text-gray-800">Attendances</h1>
@@ -14,6 +15,12 @@
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('danger'))
+        <div class="alert alert-danger">
+            {{ session('danger') }}
         </div>
     @endif
 
@@ -71,6 +78,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                {{ $students->links() }}
             </div>
         </div>
     </div>
