@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Students;
-use App\Models\User;
 use App\Utils\BayesianClassifier;
-use Illuminate\Http\Request;
 
 class TrainAndTestController extends Controller
 {

@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Students;
-use App\Utils\BayesianClassifier;
 use Illuminate\Console\Command;
+use App\Utils\BayesianClassifier;
 
 class TrainAndTest extends Command
 {
@@ -33,61 +33,27 @@ class TrainAndTest extends Command
 
         $students = Students::all();
 
-        $studentCount = count($students);
-
-        // Randomly shuffle the students array
-        $shuffledStudents = $students->shuffle();
-
-        // Calculate the count for training and testing data
-        $trainingDataCount = (int) ($studentCount * 0.7);
-        $testingDataCount = $studentCount - $trainingDataCount;
-
-        // Split the shuffled students into training and testing data.
-        $trainingStudents = $shuffledStudents->take($trainingDataCount);
-        $testingStudents = $shuffledStudents->slice($trainingDataCount);
-
         $trainingData = collect([]);
-        $testingData = collect([]);
         $trainingLabels = [];
 
-        $trainingStudents->each(function ($student) use (&$trainingData) {
+        $students->each(function ($student) use (&$trainingData) {
             $marks = $student->marks;
             $attendances = $student->attendanceStatus;
 
             foreach ($attendances as $attendance) {
                 $percentage = $attendance->percentage;
-                // dd($percentage);
             }
 
             foreach ($marks as $mark) {
                 $markValue = $mark->marks;
-                // dd($markValue);
             }
 
             $trainingData->push(['marks' => $markValue, 'attendance' => $percentage]);
         });
 
-        $testingStudents->each(function ($student) use (&$testingData) {
-            $marks = $student->marks;
-            $attendances = $student->attendanceStatus;
-
-            foreach ($attendances as $attendance) {
-                $percentage = $attendance->percentage;
-                // dd($percentage);
-            }
-
-            foreach ($marks as $mark) {
-                $markValue = $mark->marks;
-                // dd($markValue);
-            }
-
-            $testingData->push(['marks' => $markValue, 'attendance' => $percentage]);
-        });
-
         foreach ($trainingData as $sample) {
             $marks = $sample['marks'];
             $attendance = $sample['attendance'];
-
 
             if ($marks >= 80 || $attendance >= 90) {
                 $label = 'excellent';
@@ -111,55 +77,15 @@ class TrainAndTest extends Command
         $classifier->train($trainingData, $trainingLabels);
 
         // Make predictions using the trained classifier
-        $predictions = $classifier->predict($testingData);
+        $predictions = $classifier->predict($trainingData);
 
-        $studentsCount = count($testingData);
+        $studentsCount = count($trainingData);
         for ($i = 0; $i < $studentsCount; $i++) {
-            $student = $testingData[$i];
             $prediction = $predictions[$i];
 
             echo "Student " . ($i + 1) . ": Prediction - " . $prediction . "\n";
         }
 
-        $this->info('Training and testing completed successfully.');
+        $this->info('Training completed successfully.');
     }
 }
-
-// $attendance = $students->attendanceStatus->percentage;
-// $trainingData = [
-// ['marks' => 80, 'attendance' => 90],
-// ['marks' => 70, 'attendance' => 85],
-// ['marks' => 60, 'attendance' => 80],
-// ['marks' => 50, 'attendance' => 75],
-// ['marks' => 40, 'attendance' => 70],
-// ['marks' => 30, 'attendance' => 65],
-// ['marks' >= 20, 'attendance' => 30],
-
-// ['attendance' => 100, 'marks' => 100],
-// ];
-// $trainingLabels = [
-//     'excellent',
-//     'best',
-//     'very good',
-//     'good',
-//     'average',
-//     'fair',
-//     'bad',
-// ];
-// Assuming $testingData contains your testing dataset
-
-// foreach ($predictions as $prediction) {
-//     echo $i . ' ' . $prediction . "\n";
-//     $i++;
-// }
-
-
-        // $testingData = [
-        //     ['marks' => 85, 'attendance' => 92],
-        //     ['marks' => 75, 'attendance' => 88],
-        //     ['marks' => 65, 'attendance' => 82],
-        //     ['marks' => 55, 'attendance' => 78],
-        //     ['marks' => 45, 'attendance' => 72],
-        //     ['marks' => 35, 'attendance' => 68],
-        //     ['marks' <= 25, 'attendance' => 32],
-        // ];
