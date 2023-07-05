@@ -1,0 +1,34 @@
+@startuml SequenceDiagram
+
+participant Command
+participant BayesianClassifier
+participant Students
+participant Collection
+
+Command ->> BayesianClassifier: handle()
+Command ->> Students: all()
+Students -->> Command: students
+Note over Command: Iterate over students
+Command ->> Collection: each()
+Collection -->> Command: student
+Note over Command: Extract marks and attendance
+Command ->> Collection: push()
+Collection -->> Command: trainingData
+Note over Command: Assign labels based on marks and attendance
+Command ->> Students: each
+Students -->> Command: student
+Command ->> Command: assign label based on marks and attendance
+Command ->> Collection: append(label)
+Collection-->> Command: trainingLabels
+Command ->> BayesianClassifier: train(trainingData, trainingLabels)
+Note over Command, BayesianClassifier: Make predictions
+Command ->> BayesianClassifier: predict(trainingData)
+Command ->> BayesianClassifier: predictions
+Note over Command: Display predictions
+loop for each student
+    Command ->> Command: Increment student index
+    Command ->> Command: Get prediction for student
+    Command ->> Command: Display prediction
+end
+Command -->> BayesianClassifier: 'Training and testing completed successfully.'
+@enduml
