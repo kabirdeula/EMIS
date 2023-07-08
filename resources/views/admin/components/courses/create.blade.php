@@ -14,8 +14,8 @@
             <form action="{{ route('courses.store') }}" method="post">
                 @csrf
                 <div class="mb-3">
-
                     <label for="name" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
+
                     <input type="text" name="name" id="name"
                         class="form-control @error('name') is-invalid @enderror">
 
@@ -28,6 +28,7 @@
 
                 <div class="mb-3">
                     <label for="code" class="col-form-label text-md-end fw-bold">{{ __('Code') }}</label>
+
                     <input type="text" name="code" id="code"
                         class="form-control @error('code') is-invalid @enderror">
 
@@ -40,6 +41,7 @@
 
                 <div class="mb-3">
                     <label for="credit_hour" class="col-form-label text-md-end fw-bold">{{ __('Credit Hour') }}</label>
+
                     <input type="text" name="credit_hour" id="credit_hour"
                         class="form-control @error('credit_hour') is-invalid @enderror">
 
@@ -60,7 +62,6 @@
                                 {{ $program->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('program_id')
@@ -80,7 +81,6 @@
                                 {{ $semester->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('semester_id')
@@ -90,16 +90,12 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Submit') }}
-                </button>
-
+                @include('components.buttons.create')
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/course-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection

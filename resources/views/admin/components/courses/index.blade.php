@@ -12,7 +12,11 @@
         </a>
     </div>
 
-    {{-- DataTables Start --}}
+    @include('components.session.success')
+
+    @include('components.session.danger')
+
+    {{-- Tables Start --}}
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Courses Data</h6>
@@ -20,7 +24,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="course_table" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -32,6 +36,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
+
                     <tfoot>
                         <tr>
                             <th>ID</th>
@@ -43,31 +48,49 @@
                             <th>Actions</th>
                         </tr>
                     </tfoot>
+
                     <tbody>
                         @foreach ($courses as $course)
                             <tr>
                                 <td>{{ $course->id }}</td>
+
                                 <td><a href="{{ route('courses.show', $course->id) }}">{{ $course->name }}</a></td>
+
                                 <td>{{ $course->code }}</td>
+
                                 <td>{{ $course->credit_hour }}</td>
+
                                 <td>{{ $course->program->name }}</td>
+
                                 <td>{{ $course->semester->code }}</td>
+
                                 <td>
-                                    <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-success"><i
-                                            class="las la-edit"></i></a>
+                                    <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-success">
+                                        @include('components.buttons.edit')
+                                    </a>
+
                                     <form action="{{ route('courses.destroy', $course->id) }}" method="POST"
                                         style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('Are you sure you want to delete this assignment?')"><i
-                                                class="las la-trash"></i></button>
+                                            onclick="return confirm('Are you sure you want to delete this course?')">
+                                            @include('components.buttons.delete')
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
                         @endforeach
+
+                        @if ($courses->isEmpty())
+                            <tr>
+                                <td colspan="7" align="center">No course records found</td>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
+
+                {{ $courses->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>
