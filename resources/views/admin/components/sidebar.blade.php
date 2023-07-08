@@ -45,7 +45,7 @@
         <!-- Nav Item - Attendances -->
         <li class="nav-item">
             <a href="{{ route('attendances') }}" class="nav-link">
-                <span>Attendances</span>
+                <span><i class="las la-user-check fs-5"></i> Attendances</span>
             </a>
         </li>
 

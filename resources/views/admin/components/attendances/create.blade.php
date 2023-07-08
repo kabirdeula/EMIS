@@ -19,8 +19,7 @@
                         {{ __('Student') }}
                     </label>
 
-                    <select name="student_id" id="student_id"
-                        class="form-control @error('student_id') is-invalid @enderror">
+                    <select name="student_id" id="student_id" class="form-control @error('student_id') is-invalid @enderror">
                         @foreach ($students as $student)
                             <option value="{{ $student->id }}">
                                 {{ $student->user->name }}
@@ -37,12 +36,13 @@
                 </div>
 
                 <div class="mb-3">
-
                     <label for="date" class="col-form-label text-md-end fw-bold">
                         {{ __('Date') }}
                     </label>
+
                     <input type="date" name="date" id="date"
-                        class="form-control @error('date') is-invalid @enderror">
+                        class="form-control @error('date') is-invalid @enderror" value="{{ date('Y-m-d') }}"
+                        max="{{ date('Y-m-d') }}" readonly>
 
                     @error('date')
                         <span class="invalid-feedback" role="alert">
@@ -56,8 +56,7 @@
                         {{ __('Status') }}
                     </label>
 
-                    <select name="status" id="status"
-                        class="form-control @error('status') is-invalid @enderror">
+                    <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
                         <option value="">Select Status</option>
                         <option value="present">Present</option>
                         <option value="absent">Absent</option>
@@ -71,17 +70,14 @@
                     @enderror
                 </div>
 
-
                 <button type="submit" class="btn btn-success">
                     {{ __('Submit') }}
                 </button>
-
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/attendance-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection
