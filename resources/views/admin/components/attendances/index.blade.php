@@ -16,10 +16,11 @@
 
     @include('components.session.danger')
 
-    {{-- DataTables Start --}}
+    {{-- Tables Start --}}
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Attendance Data</h6>
+
             <a href="{{ route('attendances.pdf') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow fs-5">
                 <i class="las la-print me-2"></i>Print
             </a>
@@ -57,8 +58,7 @@
 
                                 <td>
                                     <a href="{{ route('attendances.edit', $student->id) }}" class="btn btn-success">
-                                        <i class="las la-edit"></i>
-                                        {{ __('Edit') }}
+                                        @include('components.buttons.edit')
                                     </a>
 
                                     <form action="{{ route('attendances.destroy', $student->id) }}" method="POST"
@@ -67,7 +67,8 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"
                                             onclick="return confirm('Are you sure you want to delete this assignment?')">
-                                            <i class="las la-trash"></i>{{ __('Delete') }}</button>
+                                            @include('components.buttons.delete')
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
@@ -79,7 +80,7 @@
                     </tbody>
                 </table>
 
-                {{ $students->links('pagination::bootstrap-4') }}
+                {{ $students->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

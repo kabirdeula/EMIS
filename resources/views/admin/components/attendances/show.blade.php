@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container">
-        <h1>Program Details: {{ $student->user->name }}</h1>
+        <h1>Attendance Details: {{ $student->user->name }}</h1>
         <table class="table">
             <tbody>
                 <tr>
@@ -41,7 +41,7 @@
                 <tr>
                     <td>
                         <a href="{{ route('attendances.edit', $student->id) }}" class="btn btn-success">
-                            <i class="las la-edit"> Edit</i>
+                            @include('components.buttons.edit')
                         </a>
                     </td>
 
