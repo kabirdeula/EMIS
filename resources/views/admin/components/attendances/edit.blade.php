@@ -66,15 +66,9 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    <i class="las la-edit"></i>
-                    {{ __('Update') }}
-                </button>
+                @include('components.buttons.update')
 
-                <a href="{{ url()->previous() }}" class="btn btn-danger">
-                    <i class="las la-undo"></i>
-                    {{ __('Back') }}
-                </a>
+                @include('components.buttons.back')
             </form>
         </div>
 

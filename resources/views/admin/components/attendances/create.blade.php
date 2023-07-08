@@ -70,9 +70,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Submit') }}
-                </button>
+                @include('components.buttons.create')
             </form>
         </div>
 

@@ -45,14 +45,18 @@
         <!-- Nav Item - Attendances -->
         <li class="nav-item">
             <a href="{{ route('attendances') }}" class="nav-link">
-                <span><i class="las la-user-check fs-5"></i> Attendances</span>
+                <span>
+                    <i class="las la-user-check fs-5"></i>Attendances
+                </span>
             </a>
         </li>
 
         <!-- Nav Item - Courses -->
         <li class="nav-item">
             <a href="{{ route('courses') }}" class="nav-link">
-                <span>Courses</span>
+                <span>
+                    <i class="las la-graduation-cap fs-5"></i>Courses
+                </span>
             </a>
         </li>
 

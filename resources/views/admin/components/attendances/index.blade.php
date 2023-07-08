@@ -12,17 +12,9 @@
         </a>
     </div>
 
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+    @include('components.session.success')
 
-    @if (session('danger'))
-        <div class="alert alert-danger">
-            {{ session('danger') }}
-        </div>
-    @endif
+    @include('components.session.danger')
 
     {{-- DataTables Start --}}
     <div class="card shadow mb-4">

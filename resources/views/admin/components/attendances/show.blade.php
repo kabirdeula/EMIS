@@ -41,14 +41,12 @@
                 <tr>
                     <td>
                         <a href="{{ route('attendances.edit', $student->id) }}" class="btn btn-success">
-                            <i class="las la-edit"></i>
+                            <i class="las la-edit"> Edit</i>
                         </a>
                     </td>
 
                     <td>
-                        <a href="{{ url() -> previous() }}" class="btn btn-danger">
-                            <i class="las la-undo"></i>
-                        </a>
+                        @include('components.buttons.back')
                     </td>
                 </tr>
             </tbody>
