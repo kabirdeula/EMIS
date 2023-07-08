@@ -1,1 +1,2 @@
-<i class="las la-edit"> Edit</i>
+<i class="las la-edit"></i>
+{{ __('Edit') }}
