@@ -85,7 +85,10 @@
         <!-- Nav Item - Prediction -->
         <li class="nav-item">
             <a href="{{ route('prediction') }}" class="nav-link">
-                <span>Prediction</span>
+                <span>
+                    <i class="las la-chart-pie fs-5"></i>
+                    Prediction
+                </span>
             </a>
         </li>
 

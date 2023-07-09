@@ -1,20 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Database\Seeders;
 
-use App\Http\Controllers\Controller;
+use App\Models\Prediction;
 use App\Models\Students;
 use App\Utils\BayesianClassifier;
+use Illuminate\Database\Seeder;
 
-class TrainAndTestController extends Controller
+class PredictionTableSeeder extends Seeder
 {
-    public function index()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
         $classifier = new BayesianClassifier();
 
         // Train the classifier
 
-        $students = Students::paginate(5);
+        $students = Students::all();
 
         $studentCount = count($students);
 
@@ -75,8 +79,12 @@ class TrainAndTestController extends Controller
                 'student' => $student->user->name,
                 'prediction' => $prediction,
             ];
-        }
 
-        return view('admin.components.train.index', compact('results'));
+            Prediction::create([
+                'student_id' => $student->id,
+                'name' => $student->user->name,
+                'prediction' => $prediction,
+            ]);
+        }
     }
 }

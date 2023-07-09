@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             AttendanceTableSeeder::class,
             MarksTableSeeder::class,
             AttendanceStatusTableSeeder::class,
+            PredictionTableSeeder::class,
         ]);
     }
 }
