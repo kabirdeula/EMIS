@@ -91,6 +91,8 @@
                 </div>
 
                 @include('components.buttons.create')
+
+                @include('components.buttons.back')
             </form>
         </div>
 

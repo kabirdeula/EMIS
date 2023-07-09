@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="mb-3">
-
                     <label for="start_date" class="col-form-label text-md-end fw-bold">
                         {{ __('Start Date') }}
                     </label>
+
                     <input type="date" name="start_date" id="start_date"
                         class="form-control @error('start_date') is-invalid @enderror">
 
@@ -44,10 +44,10 @@
                 </div>
 
                 <div class="mb-3">
-
                     <label for="end_date" class="col-form-label text-md-end fw-bold">
                         {{ __('End Date') }}
                     </label>
+
                     <input type="date" name="end_date" id="end_date"
                         class="form-control @error('end_date') is-invalid @enderror">
 
@@ -58,16 +58,14 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Submit') }}
-                </button>
+                @include('components.buttons.create')
 
+                @include('components.buttons.back')
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/holidays-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection
