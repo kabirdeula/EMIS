@@ -11,10 +11,12 @@
                 <th>Name</th>
                 <td>{{ $student->user->name }}</td>
             </tr>
+
             <tr>
                 <th>Course</th>
                 <td>{{ $marks->course->name }}</td>
             </tr>
+
             <tr>
                 <th>Marks</th>
                 <td>{{ $marks->marks }}</td>
@@ -23,13 +25,12 @@
             <tr>
                 <td>
                     <a href="{{ route('marks.edit', $student->id) }}" class="btn btn-success">
-                        <i class="las la-graduation-cap"></i>
+                        @include('components.buttons.edit')
                     </a>
                 </td>
+
                 <td>
-                    <a href="{{ url() -> previous() }}" class="btn btn-danger">
-                        <i class="las la-undo"></i>
-                    </a>
+                    @include('components.buttons.back')
                 </td>
             </tr>
         </tbody>

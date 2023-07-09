@@ -66,7 +66,7 @@
         <li class="nav-item">
             <a href="{{ route('holidays') }}" class="nav-link">
                 <span>
-                    <i class="las la-calendar"></i>
+                    <i class="las la-calendar fs-5"></i>
                     Holidays
                 </span>
             </a>
@@ -75,7 +75,10 @@
         <!-- Nav Item - Marks -->
         <li class="nav-item">
             <a href="{{ route('marks') }}" class="nav-link">
-                <span>Marks</span>
+                <span>
+                    <i class="las la-award fs-5"></i>
+                    Marks
+                </span>
             </a>
         </li>
 

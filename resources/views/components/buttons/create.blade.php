@@ -1,3 +1,4 @@
 <button type="submit" class="btn btn-success">
-    <i class="las la-plus"></i> {{ __('Create') }}
+    <i class="las la-plus fs-5"></i>
+    {{ __('Create') }}
 </button>

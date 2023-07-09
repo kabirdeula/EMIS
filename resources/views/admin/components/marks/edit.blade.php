@@ -14,7 +14,6 @@
             <form action="{{ route('marks.update', $students->id) }}" method="post">
                 @csrf
                 @method('PUT')
-
                 <div class="mb-3">
                     <label for="student_id" class="col-form-label text-md-end fw-bold">
                         {{ __('Student: ' . $students->user->name) }}
@@ -34,9 +33,9 @@
                     <label for="course_id" class="col-form-label text-md-end fw-bold">
                         {{ __('Course: ' . $marks->course->name) }}
                     </label>
+
                     <input type="text" name="course_id" id="course_id"
-                        class="form-control @error('course_id') is-invalid @enderror"
-                        value="{{ $marks->course_id }}">
+                        class="form-control @error('course_id') is-invalid @enderror" value="{{ $marks->course_id }}">
 
                     @error('course_id')
                         <span class="invalid-feedback" role="alert">
@@ -46,9 +45,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="marks" class="col-form-label text-md-end fw-bold">
-                        {{ __('Marks') }}
-                    </label>
+                    <label for="marks" class="col-form-label text-md-end fw-bold">{{ __('Marks') }}</label>
+
                     <input type="text" name="marks" id="marks"
                         class="form-control @error('marks') is-invalid @enderror" value="{{ $marks->marks }}">
 
@@ -59,16 +57,14 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Update') }}
-                </button>
+                @include('components.buttons.update')
 
+                @include('components.buttons.back')
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/marks-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection

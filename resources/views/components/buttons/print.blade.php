@@ -1,2 +1,2 @@
-<i class="las la-print"></i>
+<i class="las la-print fs-5"></i>
 Print

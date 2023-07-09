@@ -15,7 +15,7 @@ class MarksRecordsController extends Controller
      */
     public function index()
     {
-        $students = Students::paginate(5);
+        $students = Students::paginate(20);
 
         return view('admin.components.marks.index', compact('students'));
     }

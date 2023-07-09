@@ -17,7 +17,7 @@
 
     @include('components.session.danger')
 
-    {{-- DataTables Start --}}
+    {{-- Tables Start --}}
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Holiday Data</h6>
@@ -28,7 +28,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="holidays_table" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>

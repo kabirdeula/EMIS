@@ -17,7 +17,7 @@
                     <label for="name" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
 
                     <input type="text" name="name" id="name"
-                        class="form-control @error('name') is-invalid @enderror">
+                        class="form-control @error('name') is-invalid @enderror" autofocus>
 
                     @error('name')
                         <span class="invalid-feedback" role="alert">
