@@ -8,7 +8,8 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-2 text-gray-800">Courses</h1>
         <a href="{{ route('courses.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow fs-5">
-            <i class="las la-graduation-cap me-2"></i>Course
+            <i class="las la-graduation-cap"></i>
+            Course
         </a>
     </div>
 

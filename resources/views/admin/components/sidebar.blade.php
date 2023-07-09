@@ -46,7 +46,8 @@
         <li class="nav-item">
             <a href="{{ route('attendances') }}" class="nav-link">
                 <span>
-                    <i class="las la-user-check fs-5"></i>Attendances
+                    <i class="las la-user-check fs-5"></i>
+                    Attendances
                 </span>
             </a>
         </li>
@@ -55,7 +56,8 @@
         <li class="nav-item">
             <a href="{{ route('courses') }}" class="nav-link">
                 <span>
-                    <i class="las la-graduation-cap fs-5"></i>Courses
+                    <i class="las la-graduation-cap fs-5"></i>
+                    Courses
                 </span>
             </a>
         </li>
@@ -63,7 +65,10 @@
         <!-- Nav Item - Holidays -->
         <li class="nav-item">
             <a href="{{ route('holidays') }}" class="nav-link">
-                <span>Holidays</span>
+                <span>
+                    <i class="las la-calendar"></i>
+                    Holidays
+                </span>
             </a>
         </li>
 
