@@ -14,11 +14,8 @@
             <form action="{{ route('students.update', $students->id) }}" method="post">
                 @csrf
                 @method('PUT')
-
                 <div class="mb-3">
-                    <label for="user_id" class="col-form-label text-md-end fw-bold">
-                        {{ __('Name') }}
-                    </label>
+                    <label for="user_id" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
 
                     <select name="user_id" id="user_id" class="form-control @error('user_id') is-invalid @enderror">
                         @foreach ($users as $user)
@@ -40,6 +37,7 @@
                     <label for="date_of_birth" class="col-form-label text-md-end fw-bold">
                         {{ __('Date of Birth') }}
                     </label>
+
                     <input type="date" name="date_of_birth" id="date_of_birth"
                         class="form-control @error('date_of_birth') is-invalid @enderror"
                         value="{{ $students->date_of_birth }}">
@@ -52,9 +50,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone_number" class="col-form-label text-md-end fw-bold">
-                        {{ __('Phone Number') }}
-                    </label>
+                    <label for="phone_number" class="col-form-label text-md-end fw-bold">{{ __('Phone Number') }}</label>
+
                     <input type="text" name="phone_number" id="phone_number"
                         class="form-control @error('phone_number') is-invalid @enderror"
                         value="{{ $students->phone_number }}">
@@ -67,9 +64,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="program_id" class="col-form-label text-md-end fw-bold">
-                        {{ __('Program') }}
-                    </label>
+                    <label for="program_id" class="col-form-label text-md-end fw-bold">{{ __('Program') }}</label>
 
                     <select name="program_id" id="program_id"
                         class="form-control @error('program_id') is-invalid @enderror">
@@ -79,7 +74,6 @@
                                 {{ $program->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('program_id')
@@ -100,7 +94,6 @@
                                 {{ $semester->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('semester_id')
@@ -110,17 +103,14 @@
                     @enderror
                 </div>
 
+                @include('components.buttons.update')
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Update') }}
-                </button>
-
+                @include('components.buttons.back')
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/student-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection

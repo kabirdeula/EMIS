@@ -12,42 +12,47 @@
                     <th>Name</th>
                     <td>{{ $students->user->name }}</td>
                 </tr>
+
                 <tr>
                     <th>Email</th>
                     <td>{{ $students->user->email }}</td>
                 </tr>
+
                 <tr>
                     <th>Date of Birth</th>
                     <td>{{ $students->date_of_birth }}</td>
                 </tr>
+
                 <tr>
                     <th>Mobile Number</th>
                     <td>{{ $students->phone_number }}</td>
                 </tr>
+
                 <tr>
                     <th>Program</th>
                     <td>{{ optional($students->program)->name }}</td>
                 </tr>
+
                 <tr>
                     <th>Semester</th>
                     <td>{{ optional($students->semester)->code }}</td>
                 </tr>
+
                 <tr>
                     <th>Courses</th>
                     @foreach ($students->courses as $course)
                         <td>{{ $course->name }}</td>
                     @endforeach
                 </tr>
+
                 <tr>
                     <td>
                         <a href="{{ route('students.edit', $students->id) }}" class="btn btn-success">
-                            <i class="las la-graduation-cap"></i>
+                            @include('components.buttons.edit')
                         </a>
                     </td>
                     <td>
-                        <a href="{{ url()->previous() }}" class="btn btn-danger">
-                            <i class="las la-undo"></i>
-                        </a>
+                        @include('components.buttons.back')
                     </td>
                 </tr>
             </tbody>

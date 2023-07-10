@@ -97,14 +97,18 @@
             <a href="{{ route('programs') }}" class="nav-link">
                 <span>
                     <i class="las la-briefcase fs-5"></i>
-                    Programs</span>
+                    Programs
+                </span>
             </a>
         </li>
 
         <!-- Nav Item - Students -->
         <li class="nav-item">
             <a href="{{ route('students') }}" class="nav-link">
-                <span>Students</span>
+                <span>
+                    <i class="las la-user-graduate fs-5"></i>
+                    Students
+                </span>
             </a>
         </li>
 

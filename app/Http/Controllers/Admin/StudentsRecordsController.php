@@ -18,7 +18,7 @@ class StudentsRecordsController extends Controller
      */
     public function index()
     {
-        $students = Students::paginate(5);
+        $students = Students::paginate(20);
         $bbm_count = Students::where('program_id', 1)->count();
         $bca_count = Students::where('program_id', 2)->count();
         $bhm_count = Students::where('program_id', 3)->count();
@@ -47,7 +47,6 @@ class StudentsRecordsController extends Controller
             'user_id' => 'required',
             'program_id' => 'required',
             'semester_id' => 'required',
-            'course_id' => 'required',
             'date_of_birth' => 'required',
             'phone_number' => 'required',
         ]);
@@ -56,7 +55,6 @@ class StudentsRecordsController extends Controller
         $students -> user_id = $request -> input('user_id');
         $students -> program_id = $request -> input('program_id');
         $students -> semester_id = $request -> input('semester_id');
-        $students -> course_id = $request -> input('course_id');
         $students -> date_of_birth = $request -> input('date_of_birth');
         $students -> phone_number = $request -> input('phone_number');
         $students -> save();
@@ -97,7 +95,6 @@ class StudentsRecordsController extends Controller
         $students -> user_id = $request -> input('user_id');
         $students -> program_id = $request -> input('program_id');
         $students -> semester_id = $request -> input('semester_id');
-        $students -> course_id = $request -> input('course_id');
         $students -> date_of_birth = $request -> input('date_of_birth');
         $students -> phone_number = $request -> input('phone_number');
         $students -> save();
