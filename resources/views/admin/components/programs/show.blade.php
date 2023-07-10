@@ -12,20 +12,21 @@
                     <th>Name</th>
                     <td>{{ $programs->name }}</td>
                 </tr>
+
                 <tr>
                     <th>Code</th>
                     <td>{{ $programs->code }}</td>
                 </tr>
+
                 <tr>
                     <td>
                         <a href="{{ route('programs.edit', $programs->id) }}" class="btn btn-success">
-                            <i class="las la-graduation-cap"></i>
+                            @include('components.buttons.edit')
                         </a>
                     </td>
+
                     <td>
-                        <a href="{{ route('programs') }}" class="btn btn-danger">
-                            <i class="las la-undo"></i>
-                        </a>
+                        @include('components.buttons.back')
                     </td>
                 </tr>
             </tbody>

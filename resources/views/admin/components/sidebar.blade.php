@@ -95,7 +95,9 @@
         <!-- Nav Item - Programs -->
         <li class="nav-item">
             <a href="{{ route('programs') }}" class="nav-link">
-                <span>Programs</span>
+                <span>
+                    <i class="las la-briefcase fs-5"></i>
+                    Programs</span>
             </a>
         </li>
 

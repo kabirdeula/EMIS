@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CoursesRecordsController;
 use App\Http\Controllers\Admin\HolidaysRecordsController;
 use App\Http\Controllers\Admin\MarksRecordsController;
 use App\Http\Controllers\Admin\PDFController;
+use App\Http\Controllers\Admin\PredictionController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
 use App\Http\Controllers\Admin\TeachersRecordsController;
@@ -73,7 +74,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     /**
      * ! Algorithm
      */
-    Route::get('/admin/train', [TrainAndTestController::class, 'index'])->name('prediction');
+    Route::get('/admin/prediction', [PredictionController::class, 'index'])->name('prediction');
 
     /**
      * ! Attendance Group
