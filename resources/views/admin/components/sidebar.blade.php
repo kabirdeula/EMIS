@@ -125,7 +125,10 @@
         <!-- Nav Item - Users -->
         <li class="nav-item">
             <a href="{{ route('users') }}" class="nav-link">
-                <span>Users</span>
+                <span>
+                    <i class="las la-user fs-5"></i>
+                    Users
+                </span>
             </a>
         </li>
 

@@ -15,8 +15,8 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-
                     <label for="name" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
+
                     <input type="text" name="name" id="name"
                         class="form-control @error('name') is-invalid @enderror" value="{{ $users->name }}">
 
@@ -25,11 +25,11 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    {{-- password, type --}}
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="col-form-label text-md-end fw-bold">{{ __('Email') }}</label>
+
                     <input type="email" name="email" id="email"
                         class="form-control @error('email') is-invalid @enderror" value="{{ $users->email }}">
 
@@ -51,13 +51,38 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Update') }}
-                </button>
+                <div class="mb-3">
+                    <label class="col-form-label text-md-end fw-bold">{{ __('Gender') }}</label>
 
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender-male" value="Male"
+                            {{ $users->gender === 'Male' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="gender-male">
+                            Male
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender-female" value="Female"
+                            {{ $users->gender === 'Female' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="gender-female">
+                            Female
+                        </label>
+                    </div>
+
+                    @error('gender')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+
+                @include('components.buttons.update')
+
+                @include('components.buttons.back')
             </form>
         </div>
 
@@ -65,5 +90,4 @@
             <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection

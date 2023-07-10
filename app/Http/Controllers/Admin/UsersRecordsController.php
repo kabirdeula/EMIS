@@ -15,7 +15,7 @@ class UsersRecordsController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::paginate(20);
         return view('admin.components.users.index', compact('users'));
     }
 
@@ -41,6 +41,7 @@ class UsersRecordsController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
+            'gender' => 'required',
             'type' => 'required',
         ]);
 
@@ -48,6 +49,7 @@ class UsersRecordsController extends Controller
         $users->name = $request->input('name');
         $users->email = $request->input('email');
         $users->password = $request->input('password');
+        $users->gender = $request->input('gender');
         $users->type = $request->input('type');
         $users->save();
 
@@ -81,7 +83,7 @@ class UsersRecordsController extends Controller
         $users->name = $request->input('name');
         $users->email = $request->input('email');
         $users->password = $request->input('password');
-        // $users -> type = $request -> input('type');
+        $users->gender = $request->input('gender');
         $users->save();
 
         return redirect('/admin/users')->with('success', 'Users updated successfully.');
