@@ -115,7 +115,10 @@
         <!-- Nav Item - Courses -->
         <li class="nav-item">
             <a href="{{ route('teachers') }}" class="nav-link">
-                <span>Teachers</span>
+                <span>
+                    <i class="las la-chalkboard-teacher fs-5"></i>
+                    Teachers
+                </span>
             </a>
         </li>
 

@@ -13,11 +13,8 @@
         <div class="col-lg-6 col-md-12 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <form action="{{ route('teachers.store') }}" method="post">
                 @csrf
-
                 <div class="mb-3">
-                    <label for="user_id" class="col-form-label text-md-end fw-bold">
-                        {{ __('Name') }}
-                    </label>
+                    <label for="user_id" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
 
                     <select name="user_id" id="user_id"
                         class="form-control @error('user_id') is-invalid @enderror">
@@ -26,7 +23,6 @@
                                 {{ $user->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('user_id')
@@ -46,7 +42,6 @@
                                 {{ $program->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('program_id')
@@ -66,7 +61,6 @@
                                 {{ $semester->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('semester_id')
@@ -76,16 +70,15 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Submit') }}
-                </button>
+                @include('components.buttons.create')
+
+                @include('components.buttons.back')
 
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/teacher-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection

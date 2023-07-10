@@ -14,11 +14,8 @@
             <form action="{{ route('teachers.update', $teachers->id) }}" method="post">
                 @csrf
                 @method('PUT')
-
                 <div class="mb-3">
-                    <label for="user_id" class="col-form-label text-md-end fw-bold">
-                        {{ __('Name') }}
-                    </label>
+                    <label for="user_id" class="col-form-label text-md-end fw-bold">{{ __('Name') }}</label>
 
                     <select name="user_id" id="user_id" class="form-control @error('user_id') is-invalid @enderror">
                         @foreach ($users as $user)
@@ -37,9 +34,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="program_id" class="col-form-label text-md-end fw-bold">
-                        {{ __('Program') }}
-                    </label>
+                    <label for="program_id" class="col-form-label text-md-end fw-bold">{{ __('Program') }}</label>
 
                     <select name="program_id" id="program_id"
                         class="form-control @error('program_id') is-invalid @enderror">
@@ -49,7 +44,6 @@
                                 {{ $program->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('program_id')
@@ -70,7 +64,6 @@
                                 {{ $semester->name }}
                             </option>
                         @endforeach
-
                     </select>
 
                     @error('semester_id')
@@ -81,16 +74,15 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-success">
-                    {{ __('Update') }}
-                </button>
+                @include('components.buttons.update')
+
+                @include('components.buttons.back')
 
             </form>
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ asset('images/add-user-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
+            <img src="{{ asset('images/teacher-img.png') }}" alt="Illustrations from StorySet" class="img-fluid">
         </div>
     </div>
-
 @endsection
