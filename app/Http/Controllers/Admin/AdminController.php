@@ -24,8 +24,10 @@ class AdminController extends Controller
         $student_count = Students::count();
         $program_count = Programs::count();
         $course_count = Courses::count();
+        $male = User::where('gender', 'Male')->count();
+        $female = User::where('gender', 'Female')->count();
 
-        return view('admin.home', compact('user_count', 'teacher_count', 'student_count', 'program_count', 'course_count'));
+        return view('admin.home', compact('user_count', 'teacher_count', 'student_count', 'program_count', 'course_count', 'male', 'female'));
     }
 
 }

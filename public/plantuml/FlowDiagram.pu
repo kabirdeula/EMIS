@@ -1,0 +1,27 @@
+@startuml FlowDiagram
+
+start
+:Home Page;
+:Login Page;
+if(User is admin?) then (yes)
+    :Redirect to Admin Dashboard;
+    :CRUD Operation for Attendance;
+    :CRUD Operation for Marks;
+    :CRUD Operation for Students;
+    :CRUD Operation for Users;
+    :View Predictions;
+else (no)
+    :Display error message;
+    :Login;
+    if(User is student?) then (yes)
+        :Redirect to Student Dashboard;
+        :View Profile;
+        :Edit Profile;
+        :Change Password;
+    else (no)
+        :Display error message;
+        :Login;
+    endif
+endif
+stop
+@enduml

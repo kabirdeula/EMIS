@@ -16,7 +16,7 @@ class TeachersRecordsController extends Controller
      */
     public function index()
     {
-        $teachers = Teachers::paginate(5);
+        $teachers = Teachers::paginate(20);
         return view('admin.components.teachers.index', compact('teachers'));
     }
 
