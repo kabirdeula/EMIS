@@ -20,8 +20,8 @@
         </div>
 
         <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-striped" id="usersTable" width="100%" cellspacing="0">
+            <div class="table-hover">
+                <table class="table table-hover" id="usersTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
