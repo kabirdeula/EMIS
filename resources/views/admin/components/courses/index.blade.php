@@ -25,7 +25,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="course_table" width="100%" cellspacing="0">
+                <table class="table table-striped" id="data_table" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -61,7 +61,7 @@
 
                                 <td>{{ $course->credit_hour }}</td>
 
-                                <td>{{ $course->program->name }}</td>
+                                <td>{{ $course->program->code }}</td>
 
                                 <td>{{ $course->semester->code }}</td>
 
@@ -90,8 +90,6 @@
                         @endif
                     </tbody>
                 </table>
-
-                {{ $courses->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PredictionController extends Controller
 {
     public function index() {
-        $predictions = Prediction::paginate(20);
+        $predictions = Prediction::all();
         $excellent = Prediction::where('prediction', 'excellent')->count();
         $best = Prediction::where('prediction', 'best')->count();
         $very_good = Prediction::where('prediction', 'very good')->count();

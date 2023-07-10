@@ -28,7 +28,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="users_table" width="100%" cellspacing="0">
+                <table class="table table-striped" id="data_table" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -87,8 +87,6 @@
                         @endforelse
                     </tbody>
                 </table>
-
-                {{ $users->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

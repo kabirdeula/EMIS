@@ -20,6 +20,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -39,6 +41,14 @@
 
     </div>
     {{-- End of Wrapper --}}
+
+    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+
+    <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        let table = new DataTable('#data_table');
+    </script>
 </body>
 
 </html>
