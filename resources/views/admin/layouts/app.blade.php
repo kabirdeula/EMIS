@@ -36,19 +36,32 @@
     </div>
     {{-- End of Main Content --}}
 
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; UniLink 2023</span>
+            </div>
+        </div>
+    </footer>
+
     </div>
     {{-- End of Content Wrapper --}}
 
     </div>
     {{-- End of Wrapper --}}
 
-    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
-
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
+    <!-- DataTables -->
     <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- DataTables Demo -->
+    <script src="{{ asset('assets/js/datatable.js') }}"></script>
 
-    <script>
-        let table = new DataTable('#data_table');
-    </script>
+    <!-- Charts -->
+    <script src="{{ asset('assets/js/barchart.js') }}"></script>
+    <script src="{{ asset('assets/js/piechart.js') }}"></script>
 </body>
 
 </html>

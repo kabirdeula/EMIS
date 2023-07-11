@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\PredictionController;
 use App\Http\Controllers\Admin\ProgramsRecordsController;
 use App\Http\Controllers\Admin\StudentsRecordsController;
 use App\Http\Controllers\Admin\TeachersRecordsController;
-use App\Http\Controllers\Admin\TrainAndTestController;
 use App\Http\Controllers\Admin\UsersRecordsController;
 
 use App\Http\Controllers\Student\StudentController;
