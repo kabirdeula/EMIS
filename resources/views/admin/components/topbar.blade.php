@@ -10,7 +10,7 @@
     <ul class="navbar-nav ms-auto">
 
             {{-- Topbar Search --}}
-    <form class="d-none d-sm-inline-block form-inline ml-md-3 my-3 my-md-0 mw-100 navbar-search">
+    {{-- <form class="d-none d-sm-inline-block form-inline ml-md-3 my-3 my-md-0 mw-100 navbar-search">
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search...">
             <div class="input-group-append">
@@ -19,7 +19,7 @@
                 </button>
             </div>
         </div>
-    </form>
+    </form> --}}
     {{-- End Topbar Search --}}
 
         {{-- Nav Item - Search  Dropdown (Visible Only x5) --}}
@@ -170,9 +170,10 @@
 
         {{-- Nav Item - User Information --}}
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" role="button"
+            <a href="#" id="navbarDropdown" class="nav-link" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
+                <i class="las la-angle-down"></i>
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
