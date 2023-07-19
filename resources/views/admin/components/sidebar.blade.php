@@ -15,7 +15,10 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a href="{{ route('admin.home') }}" class="nav-link">
-                <span>Dashboard</span>
+                <span>
+                    <i class="las la-tachometer-alt fs-5"></i>
+                    Dashboard
+                </span>
             </a>
         </li>
 
@@ -137,7 +140,9 @@
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            <button class="rounded-circle border-0" id="sidebarToggle">
+                <i class="las la-angle-left"></i>
+            </button>
         </div>
     </ul>
     <!-- End of Sidebar -->

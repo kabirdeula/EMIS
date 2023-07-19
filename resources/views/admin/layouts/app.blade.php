@@ -62,6 +62,9 @@
     <!-- Charts -->
     <script src="{{ asset('assets/js/barchart.js') }}"></script>
     <script src="{{ asset('assets/js/piechart.js') }}"></script>
+
+    <!-- Sidebar -->
+    <script src="{{ asset('assets/js/sidebar.js') }}"></script>
 </body>
 
 </html>
