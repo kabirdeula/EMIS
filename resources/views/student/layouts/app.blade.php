@@ -34,11 +34,25 @@
     </div>
     {{-- End of Main Content --}}
 
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; UniLink 2023</span>
+            </div>
+        </div>
+    </footer>
+
     </div>
     {{-- End of Content Wrapper --}}
 
     </div>
     {{-- End of Wrapper --}}
+
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
+
+    <!-- Sidebar -->
+    <script src="{{ asset('assets/js/sidebar.js') }}"></script>
 </body>
 
 </html>
