@@ -51,6 +51,10 @@
     <!-- jQuery -->
     <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
 
+    <!-- Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ asset('assets/js/attendanceChart.js') }}"></script>
+
     <!-- Sidebar -->
     <script src="{{ asset('assets/js/sidebar.js') }}"></script>
 </body>
