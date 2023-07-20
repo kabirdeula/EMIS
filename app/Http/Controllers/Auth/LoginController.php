@@ -56,7 +56,7 @@ class LoginController extends Controller
             }else if(auth() -> user() -> type == 'parent'){
                 return redirect() -> route('parent.home');
             }else{
-                return redirect() -> route('home');
+                return redirect() -> route('student.home');
             }
         }else{
             return redirect() -> route('login') -> with('error', 'Email Address or Passwords is Wrong.');
