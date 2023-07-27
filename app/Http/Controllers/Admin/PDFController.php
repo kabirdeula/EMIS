@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\View;
 
 class PDFController extends Controller
 {
-    public function AttendancePDF()
+    public function attendnacePDF()
     {
         // Fetching table data from the database.
         $attendances = Attendance::all();
@@ -30,7 +30,7 @@ class PDFController extends Controller
         $pdf -> stream('attendances.pdf');
     }
 
-    public function HolidayPDF()
+    public function holidayPDF()
     {
         // Fetching table data from the database.
         $holidays = Holidays::all();
@@ -45,7 +45,7 @@ class PDFController extends Controller
         $pdf -> stream('holidays.pdf');
     }
 
-    public function StudentPDF()
+    public function studentPDF()
     {
         // Fetching table data from the database.
         $students = Students::all();
@@ -60,7 +60,7 @@ class PDFController extends Controller
         $pdf -> stream('students.pdf');
     }
 
-    public function TeacherPDF()
+    public function teacherPDF()
     {
         // Fetching table data from the database.
         $teachers = Teachers::all();
@@ -75,7 +75,7 @@ class PDFController extends Controller
         $pdf -> stream('teachers.pdf');
     }
 
-    public function UsersPDF()
+    public function usersPDF()
     {
         // Fetching table data from the database.
         $users = User::all();

@@ -122,11 +122,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     /**
      *! PDF Group
      */
-    Route::get('/admin/pdf/attendance', [PDFController::class, 'AttendancePDF'])->name('attendances.pdf');
-    Route::get('/admin/pdf/holiday', [PDFController::class, 'HolidayPDF'])->name('holidays.pdf');
-    Route::get('/admin/pdf/student', [PDFController::class, 'StudentPDF'])->name('students.pdf');
-    Route::get('/admin/pdf/teacher', [PDFController::class, 'TeacherPDF'])->name('teachers.pdf');
-    Route::get('/admin/pdf/user', [PDFController::class, 'UsersPDF'])->name('users.pdf');
+    Route::get('/admin/pdf/attendance', [PDFController::class, 'attendnacePDF'])->name('attendances.pdf');
+    Route::get('/admin/pdf/holiday', [PDFController::class, 'holidayPDF'])->name('holidays.pdf');
+    Route::get('/admin/pdf/student', [PDFController::class, 'studentPDF'])->name('students.pdf');
+    Route::get('/admin/pdf/teacher', [PDFController::class, 'teacherPDF'])->name('teachers.pdf');
+    Route::get('/admin/pdf/user', [PDFController::class, 'usersPDF'])->name('users.pdf');
 
     /**
      * ! Programs Group

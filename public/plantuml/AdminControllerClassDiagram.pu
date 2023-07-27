@@ -52,10 +52,10 @@ class MarksRecordsController{
 
 class PDFController{
     +AttendancePDF()
-    +HolidayPDF()
-    +StudentPDF()
-    +TeacherPDF()
-    +UsersPDF()
+    +holidayPDF()
+    +studentPDF()
+    +teacherPDF()
+    +usersPDF()
 }
 
 class ProgramsRecordsController{
